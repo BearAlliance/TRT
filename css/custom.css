@@ -20,6 +20,9 @@ h3 {
 	padding-top: 20px;
 }
 
+.navbar-brand {
+	padding: 10px;
+}
 .navbar-default {
 background-color: #F3711A;
 border-color: #FFFFFF;
