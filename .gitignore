@@ -2,3 +2,9 @@
 *.xml
 
 .idea/workspace.xml
+
+.idea
+
+/build
+
+/node_modules
