@@ -133,6 +133,16 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+/* Custom TRT font */
+@font-face {
+    font-family: stingray;
+    src: url('/fonts/stingray.ttf');
+}
+.trt-heading {
+    font-family: stingray;
+}
+/* /custom TRT font*/
+
 
 /* full page backgrounds */
 .full-width-background {
@@ -170,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 80px;
     padding-bottom: 10px;
     color: white;
-    font-size: 10em;
+    font-size: 9em;
 }
 
 .center-sub-heading {
@@ -200,9 +210,54 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0;
 }
 
+/* Index page carousel */
+.carousel-index {
+    height: 300px;
+}
+
+#carousel-index {
+    height: 300px;
+}
+#carousel-index-image-1 {
+    height: 300px;
+    background: url('/img/stock2.jpg') top center fixed;
+    /*background-size: cover;*/
+}
+#carousel-index-image-2 {
+    height: 300px;
+    background: url('/img/service.jpg') top center;
+    background-size: cover;
+
+}
+#carousel-index-image-3 {
+    height: 300px;
+    background: url('/img/fit.jpg') top center;
+    background-size: cover;
+
+}
+#carousel-index-image-4 {
+    height: 300px;
+    background: url('/img/rental.jpg') top center;
+    background-size: cover;
+
+}
+/* /Index Page Carousel*/
+
+
+
 /* footer */
 .footer {
     height: 50px;
+}
+
+/* Watermark */
+.watermark {
+    font-size: 10px;
+}
+.watermark a {
+    font-size: 10px;
+    text-decoration: none;
+    color: inherit;
 }
 /* /footer */
 

@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="Favata's, NY Bike Rentals, New York Bikes, NY Bicycle Store,Bicycle store, TRT, Table Rock Tours,Hudson Valley, Bicycles,  Table Rock Tours and Bicycles, Ride Race Live, Mountain Bike Rental, Road Bike Rental, Full service bike shop, Bike riding techniques, Upcoming bike events, Bikes, Parts, Repairs, Rides, Womens bikes, Men bikes,Road bicycles, Mountain Bicycles, Bike shop, The bike shop, Bike parts, Bikes on sale, Bike gear, Bike Accessories, Down hill bikes, Specialized bikes, BMX, Cycling shop"/>
     <title>TRT Bicycles (845)-658-7832</title>
 
     <!-- Favicon -->
@@ -15,15 +17,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/custom.css" rel="stylesheet">
     <!-- FontAwesome -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
 </head>
 
 
@@ -32,7 +31,7 @@
 <!-- Nav -->
 <div class="navbar navbar-default navbar-fixed-top"
      role="navigation">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Collapse -->
         <div class="navbar-header">
             <button type="button"
@@ -51,11 +50,6 @@
         <!-- /Collapse -->
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active">
-                    <a href="/index.html">
-                        Home
-                    </a>
-                </li>
                 <!-- Bikes dropdown -->
                 <li class="dropdown">
                     <a href="#"
@@ -102,6 +96,26 @@
                             Hybrid
                         </a></li>
 
+                        <!-- Framed -->
+                        <li class="dropdown-header bikes-header">
+                            Framed Fat Bikes
+                        </li>
+                        <li><a href="http://www.framedbikes.com/wt-alloy-series/"
+                               target="_blank">
+                            Wolftrax
+                        </a>
+                        </li>
+                        <li><a href="http://www.framedbikes.com/ak-shimano-series/"
+                               target="_blank">
+                            Alaskan
+                        </a>
+                        </li>
+                        <li><a href="http://www.framedbikes.com/minnesota-series-dealers/"
+                               target="_blank">
+                            Minnesota
+                        </a>
+                        </li>
+
                         <!-- Redline -->
                         <li class="dropdown-header bikes-header">
                             Redline
@@ -113,15 +127,96 @@
                     </ul>
                     <!-- /Bikes dropdown -->
 
-                <li><a href="#">Rentals</a></li>
-                <li><a href="#">Repairs</a></li>
-                <li><a href="/views/customfit.html">Custom Bike Fit</a></li>
-                <li><a href="#about" data-toggle="modal">About</a></li>
-                <li><a href="#contact" data-toggle="modal">Contact-Hours</a></li>
+                <li><a href="#">Rental</a></li>
+                <li><a href="#">Repair</a></li>
+                <li><a href="#">Fit</a></li>
+                <!--<li><a href="#about" data-toggle="modal">About</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>TRT Bicycles (845)-658-7832</a></li>
+                <li><a id="todayHours" href="#hours" data-toggle="modal"></a></li>
+                <li><a href="#contact" data-toggle="modal">(845)-658-7832</a></li>
             </ul>
+            <script>
+                var today = new Date();
+                var day = today.getDay();
+
+                var summerHours = {
+                    'mon': '11:00AM - 6:00PM',
+                    'tue': 'CLOSED',
+                    'wed': '11:00AM - 6:00PM',
+                    'thu': '11:00AM - 7:00PM',
+                    'fri': '11:00AM - 7:00PM',
+                    'sat': '11:00AM - 5:00PM',
+                    'sun': '11:00AM - 5:00PM'
+                };
+
+                var fallHours = {
+                    'mon': '11:00AM - 6:00PM',
+                    'tue': 'CLOSED',
+                    'wed': '11:00AM - 6:00PM',
+                    'thu': '11:00AM - 6:00PM',
+                    'fri': '11:00AM - 6:00PM',
+                    'sat': '11:00AM - 5:00PM',
+                    'sun': '11:00AM - 5:00PM'
+                };
+
+                var winterHours = {
+                    'mon': '11:00AM - 6:00PM',
+                    'tue': 'CLOSED',
+                    'wed': '11:00AM - 6:00PM',
+                    'thu': 'CLOSED',
+                    'fri': '11:00AM - 6:00PM',
+                    'sat': '11:00AM - 5:00PM',
+                    'sun': '12:00AM - 5:00PM'
+                };
+
+                var currentHours = fallHours;
+
+                // assign hours for today
+                var hours;
+                switch (day) {
+                    // Monday
+                    case 1:
+                        hours = currentHours.mon;
+                        break;
+                    // Tuesday
+                    case 2:
+                        hours = currentHours.tue;
+                        break;
+                    // Wednesday
+                    case 3:
+                        hours = currentHours.wed;
+                        break;
+                    // Thursday
+                    case 4:
+                        hours = currentHours.thu;
+                        break;
+                    // Friday:
+                    case 5:
+                        hours = currentHours.fri;
+                        break;
+                    // Saturday
+                    case 6:
+                        hours = currentHours.sat;
+                        break;
+                    // Sunday
+                    case 7:
+                        hours = currentHours.sun;
+                        break;
+                    default:
+                }
+
+                if (hours === 'CLOSED') {
+                    document.getElementById('todayHours').innerHTML = "Closed Today";
+                    document.getElementById('todayHoursCollapse').innerHTML = "Closed Today";
+
+                }
+                else {
+                    document.getElementById('todayHours').innerHTML = "Open Today " + hours;
+                    document.getElementById('todayHoursCollapse').innerHTML = "Open Today " + hours;
+
+                }
+            </script>
         </div>
         <!--/ .nav-collapse -->
     </div>
@@ -130,66 +225,54 @@
 
 <div class="index-content">
 
-    <!--&lt;!&ndash; Carousel &ndash;&gt;-->
-    <!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">-->
-    <!--&lt;!&ndash; Indicators &ndash;&gt;-->
-    <!--<ol class="carousel-indicators">-->
-    <!--<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
-    <!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
-    <!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
-    <!--<li data-target="#carousel-example-generic" data-slide-to="3"></li>-->
-    <!--</ol>-->
+    <!-- Carousel -->
+    <div id="carousel-index" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-index" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-index" data-slide-to="1"></li>
+            <li data-target="#carousel-index" data-slide-to="2"></li>
+            <li data-target="#carousel-index" data-slide-to="3"></li>
+        </ol>
 
-    <!--&lt;!&ndash; Wrapper for slides &ndash;&gt;-->
-    <!--<div class="carousel-inner">-->
-    <!--<div class="item active">-->
-    <!--<img src="img/kids2.jpg" alt="..."> &lt;!&ndash; 1200x315 image size &ndash;&gt;-->
-    <!--<div class="carousel-caption">-->
-    <!--&lt;!&ndash;<h3>image text</h3> &ndash;&gt;-->
-    <!--</div>-->
-    <!--</div>-->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <!-- Carousel content -->
 
-    <!--&lt;!&ndash; Carousel content &ndash;&gt;-->
-    <!--<div class="item">-->
-    <!--<img src="img/forfun.jpg" alt="...">-->
+            <!-- Splash -->
+            <div class="item active" id="carousel-index-image-1">
+                <div class="carousel-caption">
+                    <!--<h4>Welcome</h4>-->
+                </div>
+            </div>
 
-    <!--<div class="carousel-caption">-->
-    <!--<h3>Just for Fun</h3>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="item">-->
-    <!--<img src="img/road2.jpg" alt="...">-->
-
-    <!--<div class="carousel-caption">-->
-    <!--<h3>On the Road</h3>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="item">-->
-    <!--<img src="img/dirt2.jpg" alt="...">-->
-
-    <!--<div class="carousel-caption">-->
-    <!--<h3>Or in the Woods</h3>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--&lt;!&ndash; Controls &ndash;&gt;-->
-    <!--<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
-    <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
-    <!--</a>-->
-    <!--<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
-    <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
-    <!--</a>-->
-    <!--</div>-->
-    <!--&lt;!&ndash; /Carousel &ndash;&gt;-->
-
+            <!-- Repair -->
+            <div class="item" id="carousel-index-image-2">
+                <div class="carousel-caption">
+                    <h3>Repair</h3>
+                </div>
+            </div>
+            <!---->
+            <div class="item" id="carousel-index-image-3">
+                <div class="carousel-caption">
+                    <h3>Fit</h3>
+                </div>
+            </div>
+            <div class="item" id="carousel-index-image-4">
+                <div class="carousel-caption">
+                    <h3>Rentals</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Carousel -->
 
     <!-- Main Page Content -->
 
     <!-- Section 1 -->
     <div class="full-width-background section-1">
         <div class="col-xs-12">
-            <h1 class="center-heading">Table Rock Tours and Bicycles</h1>
+            <h1 class="center-heading trt-heading">TRT Bicycles</h1>
             <h2 class="center-sub-heading">Family owned. Rider focused.</h2>
         </div>
     </div>
@@ -215,7 +298,7 @@
 
     <div class="full-width-background section-2">
         <div class="col-xs-12">
-            <h1 class="center-heading">Repairs</h1>
+            <h1 class="center-heading">Repair</h1>
         </div>
     </div>
 
@@ -224,8 +307,7 @@
             <div class="col-md-3"></div>
             <div class="col-xs-12 col-md-6">
                 <h3>Committed to the highest standards of repair, we boast a full-time year-round service staff. 48hr
-                    turnround
-                    for repairs is available on request</h3>
+                    turnround for repairs is available on request</h3>
                 <a href="#" class="btn btn-primary">Learn More</a>
             </div>
             <div class="col-md-3"></div>
@@ -270,7 +352,8 @@
             <div class="col-md-3"></div>
             <div class="col-xs-12 col-md-6">
                 <h3>
-                    Come enjoy a ride in the Hudson Valley! Rent one of our 2016 fleet, serviced after every ride, we have a full range of sizes.
+                    Come enjoy a ride in the Hudson Valley! Rent one of our 2016 fleet, serviced after every ride, we
+                    have a full range of sizes.
                 </h3>
                 <a href="#" class="btn btn-primary">Learn More</a>
             </div>
@@ -288,7 +371,7 @@
 <div class="navbar navbar-inverse navbar-fixed-bottom footer" role="navigation">
     <div class="container">
         <div class="navbar-text pull-left">
-            <p>Table Rock Tours and Bicycles</p>
+            <p class="watermark">Created by <a target="_blank" href="http://nickcacace.com">Nick Cacace</a></p>
         </div>
         <div class="navbar-text pull-right">
             <a href="https://www.facebook.com/favatastrtbicycles"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -300,82 +383,136 @@
 </div>
 <!-- /footer -->
 
-<!-- Contact -->
+<!-- Hours -->
+<div class="modal fade" id="hours" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header navbar-default">
+                <h3 id="hours-modal-title">Fall Hours</h3>
+            </div>
+            <div class="modal-body">
+                <div class="table table-striped">
+
+                    <!-- Summer Hours -->
+                    <!--<table class="table table-striped">-->
+                    <!--<tr>-->
+                    <!--<td>Monday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Tuesday</td>-->
+                    <!--<td>CLOSED</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Wednesday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Thursday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Friday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Saturday</td>-->
+                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Sunday</td>-->
+                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--</tr>-->
+                    <!--</table>-->
+                    <!-- /Summer Hours -->
+
+                    <!-- Fall Hours -->
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Monday</td>
+                            <td>11:00AM - 6:00PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>CLOSED</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>11:00AM - 6:00PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>11:00AM - 6:00PM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>11:00AM - 6:00PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>11:00AM - 5:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>11:00AM - 5:00 PM</td>
+                        </tr>
+                    </table>
+                    <!-- /Fall Hours -->
+
+                    <!-- Winter Hours -->
+                    <!--<table class="table table-striped">-->
+                    <!--<tr>-->
+                    <!--<td>Monday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Tuesday</td>-->
+                    <!--<td>CLOSED</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Wednesday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Thursday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Friday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Saturday</td>-->
+                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Sunday</td>-->
+                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--</tr>-->
+                    <!--</table>-->
+                    <!-- /Winter Hours-->
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- /Hours -->
+
+<!-- Contact -->
 <div class="modal fade" id="contact" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header navbar-default">
-                <h4>Contact</h4>
+                <h3>Contact</h3>
             </div>
             <div class="modal-body">
-                <h3>Fall Hours</h3>
-                <div class="table table-striped">
-                    <table class="table table-striped">
-                        <tr>
-                            <td>
-                                Monday
-                            </td>
-                            <td>
-                                11:00AM - 6:00PM
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Tuesday
-                            </td>
-                            <td>
-                                CLOSED
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Wednesday
-                            </td>
-                            <td>
-                                11:00AM - 6:00PM
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Thursday
-                            </td>
-                            <td>
-                                11:00AM - 6:00PM
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Friday
-                            </td>
-                            <td>
-                                11:00AM - 6:00PM
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Saturday
-                            </td>
-                            <td>
-                                11:00AM - 5:00 PM
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Sunday
-                            </td>
-                            <td>
-                                11:00AM - 5:00 PM
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <h3>Contact</h3>
                 <h5>
                     Favata's TRT Bicycles <br>
                     1066 Route 32 <br>
-                    PO Box 99999 <br>
+                    PO Box 228 <br>
                     Rosendale, NY 12472
                 </h5>
                 <h4>Phone:</h4> (845)658-7832
