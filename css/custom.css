@@ -144,6 +144,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .trt-heading {
     font-family: stingray;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 9vw;
 }
 /* /custom TRT font*/
 
@@ -184,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 80px;
     padding-bottom: 10px;
     color: white;
-    font-size: 9em;
+    font-size: 7vw;
 }
 
 .center-sub-heading {
