@@ -252,8 +252,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* /Index Page Carousel*/
 
-
-
 /* footer */
 .footer {
     height: 40px;
@@ -277,6 +275,27 @@ h1, h2, h3, h4, h5, h6 {
     height: 600px;
 }
 /* /Fit Page*/
+
+/* Repair Page */
+.repair-banner {
+    background: url('/img/repair-banner.jpg') center;
+    background-size: cover;
+    height: 200px;
+}
+
+.repair-heading {
+    text-align: center;
+    font-family: stingray;
+}
+
+.repair-price {
+    text-align: center;
+}
+
+.repair-list {
+    text-align: center;
+}
+/* /Repair Page*/
 
 .map {
     padding-top: 20px;
