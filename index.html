@@ -22,9 +22,8 @@
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <!-- Custom CSS -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 </head>
-
 
 <body>
 
@@ -44,7 +43,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/index.html">
-                <span><img src="img/trt.svg" height="30px"/></span>
+                <span><img src="/img/trt.svg" height="30px"/></span>
             </a>
         </div>
         <!-- /Collapse -->
@@ -127,9 +126,9 @@
                     </ul>
                     <!-- /Bikes dropdown -->
 
-                <li><a href="#">Rental</a></li>
-                <li><a href="#">Repair</a></li>
-                <li><a href="#">Fit</a></li>
+                <li><a href="/views/rental.html">Rental</a></li>
+                <li><a href="/views/service.html">Repair</a></li>
+                <li><a href="/views/fit.html">Fit</a></li>
                 <!--<li><a href="#about" data-toggle="modal">About</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -167,7 +166,7 @@
                     'thu': 'CLOSED',
                     'fri': '11:00AM - 6:00PM',
                     'sat': '11:00AM - 5:00PM',
-                    'sun': '12:00AM - 5:00PM'
+                    'sun': '12:00PM - 5:00PM'
                 };
 
                 var currentHours = fallHours;
@@ -208,13 +207,9 @@
 
                 if (hours === 'CLOSED') {
                     document.getElementById('todayHours').innerHTML = "Closed Today";
-                    document.getElementById('todayHoursCollapse').innerHTML = "Closed Today";
-
                 }
                 else {
                     document.getElementById('todayHours').innerHTML = "Open Today " + hours;
-                    document.getElementById('todayHoursCollapse').innerHTML = "Open Today " + hours;
-
                 }
             </script>
         </div>
@@ -252,12 +247,13 @@
                     <h3>Repair</h3>
                 </div>
             </div>
-            <!---->
+            <!-- -->
             <div class="item" id="carousel-index-image-3">
                 <div class="carousel-caption">
                     <h3>Fit</h3>
                 </div>
             </div>
+            <!-- -->
             <div class="item" id="carousel-index-image-4">
                 <div class="carousel-caption">
                     <h3>Rentals</h3>
@@ -374,10 +370,12 @@
             <p class="watermark">Created by <a target="_blank" href="http://nickcacace.com">Nick Cacace</a></p>
         </div>
         <div class="navbar-text pull-right">
-            <a href="https://www.facebook.com/favatastrtbicycles"><i class="fa fa-facebook-square fa-2x"></i></a>
-            <a href="https://twitter.com/christianfavata"><i class="fa fa-twitter-square fa-2x"></i></a>
-            <a href="https://plus.google.com/114329360121273493084/about?hl=en"><i
-                    class="fa fa-google plus-square fa-2x"></i></a>
+            <a href="https://www.facebook.com/favatastrtbicycles" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+            <a href="https://twitter.com/christianfavata" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="https://www.instagram.com/explore/tags/trtbicycles/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+            <a href="https://plus.google.com/114329360121273493084/about?hl=en" target="_blank">
+                <i class="fa fa-google plus-square fa-2x"></i></a>
+
         </div>
     </div>
 </div>
@@ -475,7 +473,7 @@
                     <!--</tr>-->
                     <!--<tr>-->
                     <!--<td>Thursday</td>-->
-                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--<td>CLOSED</td>-->
                     <!--</tr>-->
                     <!--<tr>-->
                     <!--<td>Friday</td>-->
@@ -487,7 +485,7 @@
                     <!--</tr>-->
                     <!--<tr>-->
                     <!--<td>Sunday</td>-->
-                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--<td>12:00PM - 5:00 PM</td>-->
                     <!--</tr>-->
                     <!--</table>-->
                     <!-- /Winter Hours-->
@@ -508,16 +506,33 @@
             <div class="modal-header navbar-default">
                 <h3>Contact</h3>
             </div>
-            <div class="modal-body">
-                <h5>
-                    Favata's TRT Bicycles <br>
-                    1066 Route 32 <br>
-                    PO Box 228 <br>
-                    Rosendale, NY 12472
-                </h5>
-                <h4>Phone:</h4> (845)658-7832
-                <h4>Email:</h4> Christian@trtbicycles.com
-            </div>
+                <!-- Google maps-->
+                <div class="col-xs-12 visible-xs center-text">
+                    <address>
+                        <strong>Favata's TRT Bicycles</strong> <br>
+                        1066 Route 32 <br>
+                        PO Box 228 <br>
+                        Rosendale, NY 12472
+                    </address>
+                    <a href="https://www.google.com/maps/place/Favata's+TRT+Bicycles/@41.842841,-74.0761897,17z/data=!3m1!4b1!4m2!3m1!1s0x89dd1bca6bdc817b:0x62a69083f892ee33">
+                        Google Maps
+                    </a>
+                </div>
+                <div class="col-xs-12 map hidden-xs">
+                    <iframe src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2972.324535623776!2d-74.07618968482844!3d41.84284097922505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd1bca6bdc817b%3A0x62a69083f892ee33!2sFavata&#39;s+TRT+Bicycles!5e0!3m2!1sen!2sus!4v1450919632298"
+                            width="400"
+                            height="300"
+                            frameborder="0"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="col-xs-12 col-sm-6 center-text">
+                    <h4>Phone</h4> 845-658-7832
+                </div>
+                <div class="col-xs-12 col-sm-6 center-text">
+                    <h4>Email</h4> <a href="mailto:christian@trtbicycles.com">Christian@trtbicycles.com</a>
+                </div>
+
             <div class="modal-footer">
                 <a class="btn btn-default" data-dismiss="modal">Close</a>
             </div>

@@ -63,6 +63,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFFFFF;
 }
 
+.navbar-fixed-top {
+    border: 0;
+}
+
 .btn-primary {
     background-color: #2C3E50;
     border-color: #2C3E50;
@@ -247,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* footer */
 .footer {
-    height: 50px;
+    height: 40px;
 }
 
 /* Watermark */
@@ -260,6 +264,23 @@ h1, h2, h3, h4, h5, h6 {
     color: inherit;
 }
 /* /footer */
+
+/* Fit Page */
+#fit-banner {
+    background: url('/img/precisionFit.gif') ;
+    background-size: cover;
+    height: 600px;
+}
+/* /Fit Page*/
+
+.map {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.center-text {
+    text-align: center;
+}
 
 @media screen and (max-width: 800px) {
     .center-heading {

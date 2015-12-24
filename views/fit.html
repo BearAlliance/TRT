@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="Favata's, NY Bike Rentals, New York Bikes, NY Bicycle Store,Bicycle store, TRT, Table Rock Tours,Hudson Valley, Bicycles,  Table Rock Tours and Bicycles, Ride Race Live, Mountain Bike Rental, Road Bike Rental, Full service bike shop, Bike riding techniques, Upcoming bike events, Bikes, Parts, Repairs, Rides, Womens bikes, Men bikes,Road bicycles, Mountain Bicycles, Bike shop, The bike shop, Bike parts, Bikes on sale, Bike gear, Bike Accessories, Down hill bikes, Specialized bikes, BMX, Cycling shop"/>
+    <title>TRT Fit</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/ico" href="/img/favicon.ico"/>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Custom CSS -->
+    <link href="/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Nav -->
+<div class="navbar navbar-default navbar-fixed-top"
+     role="navigation">
+    <div class="container">
+        <!-- Collapse -->
+        <div class="navbar-header">
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">
+                <span><img src="/img/trt.svg" height="30px"/></span>
+            </a>
+        </div>
+        <!-- /Collapse -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- Bikes dropdown -->
+                <li class="dropdown">
+                    <a href="#"
+                       class="dropdown-toggle"
+                       data-toggle="dropdown">
+                        Bicycles
+                        <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+
+                        <!-- Trek -->
+                        <li class="dropdown-header bikes-header">
+                            Trek
+                        </li>
+                        <li><a href="http://www.trekbikes.com/us/en/bikes/road/"
+                               target="_blank">
+                            Road
+                        </a></li>
+                        <li><a href="http://www.trekbikes.com/us/en/bikes/mountain/"
+                               target="_blank">
+                            Mountain
+                        </a></li>
+                        <li><a href="http://www.trekbikes.com/us/en/bikes/city/">
+                            Hybrid
+                        </a></li>
+                        <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                               target="_blank">
+                            Kids
+                        </a></li>
+
+                        <!-- BMC -->
+                        <li class="dropdown-header bikes-header">
+                            BMC
+                        </li>
+                        <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                               target="_blank">
+                            Road
+                        </a></li>
+                        <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                               target="_blank">
+                            Mountain
+                        </a></li>
+                        <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                               target="_blank">
+                            Hybrid
+                        </a></li>
+
+                        <!-- Framed -->
+                        <li class="dropdown-header bikes-header">
+                            Framed Fat Bikes
+                        </li>
+                        <li><a href="http://www.framedbikes.com/wt-alloy-series/"
+                               target="_blank">
+                            Wolftrax
+                        </a>
+                        </li>
+                        <li><a href="http://www.framedbikes.com/ak-shimano-series/"
+                               target="_blank">
+                            Alaskan
+                        </a>
+                        </li>
+                        <li><a href="http://www.framedbikes.com/minnesota-series-dealers/"
+                               target="_blank">
+                            Minnesota
+                        </a>
+                        </li>
+
+                        <!-- Redline -->
+                        <li class="dropdown-header bikes-header">
+                            Redline
+                        </li>
+                        <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                               target="_blank">
+                            BMX
+                        </a></li>
+                    </ul>
+                    <!-- /Bikes dropdown -->
+
+                <li><a href="/views/rental.html">Rental</a></li>
+                <li><a href="/views/service.html">Repair</a></li>
+                <li><a href="/views/fit.html">Fit</a></li>
+                <!--<li><a href="#about" data-toggle="modal">About</a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="todayHours" href="#hours" data-toggle="modal"></a></li>
+                <li><a href="#contact" data-toggle="modal">(845)-658-7832</a></li>
+            </ul>
+            <script>
+                var today = new Date();
+                var day = today.getDay();
+
+                var summerHours = {
+                    'mon': '11:00AM - 6:00PM',
+                    'tue': 'CLOSED',
+                    'wed': '11:00AM - 6:00PM',
+                    'thu': '11:00AM - 7:00PM',
+                    'fri': '11:00AM - 7:00PM',
+                    'sat': '11:00AM - 5:00PM',
+                    'sun': '11:00AM - 5:00PM'
+                };
+
+                var fallHours = {
+                    'mon': '11:00AM - 6:00PM',
+                    'tue': 'CLOSED',
+                    'wed': '11:00AM - 6:00PM',
+                    'thu': '11:00AM - 6:00PM',
+                    'fri': '11:00AM - 6:00PM',
+                    'sat': '11:00AM - 5:00PM',
+                    'sun': '11:00AM - 5:00PM'
+                };
+
+                var winterHours = {
+                    'mon': '11:00AM - 6:00PM',
+                    'tue': 'CLOSED',
+                    'wed': '11:00AM - 6:00PM',
+                    'thu': 'CLOSED',
+                    'fri': '11:00AM - 6:00PM',
+                    'sat': '11:00AM - 5:00PM',
+                    'sun': '12:00AM - 5:00PM'
+                };
+
+                var currentHours = fallHours;
+
+                // assign hours for today
+                var hours;
+                switch (day) {
+                    // Monday
+                    case 1:
+                        hours = currentHours.mon;
+                        break;
+                    // Tuesday
+                    case 2:
+                        hours = currentHours.tue;
+                        break;
+                    // Wednesday
+                    case 3:
+                        hours = currentHours.wed;
+                        break;
+                    // Thursday
+                    case 4:
+                        hours = currentHours.thu;
+                        break;
+                    // Friday:
+                    case 5:
+                        hours = currentHours.fri;
+                        break;
+                    // Saturday
+                    case 6:
+                        hours = currentHours.sat;
+                        break;
+                    // Sunday
+                    case 7:
+                        hours = currentHours.sun;
+                        break;
+                    default:
+                }
+
+                if (hours === 'CLOSED') {
+                    document.getElementById('todayHours').innerHTML = "Closed Today";
+
+                }
+                else {
+                    document.getElementById('todayHours').innerHTML = "Open Today " + hours;
+
+                }
+            </script>
+        </div>
+        <!--/ .nav-collapse -->
+    </div>
+</div>
+<!--/ Nav -->
+
+<!-- Fit Content -->
+<div id="fit-banner"></div>
+
+<!-- /Fit Content -->
+
+<!-- Fixed footer -->
+<div class="navbar navbar-inverse navbar-fixed-bottom footer" role="navigation">
+    <div class="container">
+        <div class="navbar-text pull-left">
+            <p class="watermark">Created by <a target="_blank" href="http://nickcacace.com">Nick Cacace</a></p>
+        </div>
+        <div class="navbar-text pull-right">
+            <a href="https://www.facebook.com/favatastrtbicycles"><i class="fa fa-facebook-square fa-2x"></i></a>
+            <a href="https://twitter.com/christianfavata"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="https://plus.google.com/114329360121273493084/about?hl=en"><i
+                    class="fa fa-google plus-square fa-2x"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /footer -->
+
+<!-- Hours -->
+<div class="modal fade" id="hours" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header navbar-default">
+                <h3 id="hours-modal-title">Fall Hours</h3>
+            </div>
+            <div class="modal-body">
+                <div class="table table-striped">
+
+                    <!-- Summer Hours -->
+                    <!--<table class="table table-striped">-->
+                    <!--<tr>-->
+                    <!--<td>Monday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Tuesday</td>-->
+                    <!--<td>CLOSED</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Wednesday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Thursday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Friday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Saturday</td>-->
+                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Sunday</td>-->
+                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--</tr>-->
+                    <!--</table>-->
+                    <!-- /Summer Hours -->
+
+                    <!-- Fall Hours -->
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Monday</td>
+                            <td>11:00AM - 6:00PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>CLOSED</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>11:00AM - 6:00PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>11:00AM - 6:00PM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>11:00AM - 6:00PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>11:00AM - 5:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>11:00AM - 5:00 PM</td>
+                        </tr>
+                    </table>
+                    <!-- /Fall Hours -->
+
+                    <!-- Winter Hours -->
+                    <!--<table class="table table-striped">-->
+                    <!--<tr>-->
+                    <!--<td>Monday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Tuesday</td>-->
+                    <!--<td>CLOSED</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Wednesday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Thursday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Friday</td>-->
+                    <!--<td>11:00AM - 6:00PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Saturday</td>-->
+                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>Sunday</td>-->
+                    <!--<td>11:00AM - 5:00 PM</td>-->
+                    <!--</tr>-->
+                    <!--</table>-->
+                    <!-- /Winter Hours-->
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Hours -->
+
+<!-- Contact -->
+<div class="modal fade" id="contact" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header navbar-default">
+                <h3>Contact</h3>
+            </div>
+            <div class="modal-body">
+                <h5>
+                    Favata's TRT Bicycles <br>
+                    1066 Route 32 <br>
+                    PO Box 228 <br>
+                    Rosendale, NY 12472
+                </h5>
+                <h4>Phone:</h4> (845)658-7832
+                <h4>Email:</h4> Christian@trtbicycles.com
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-default" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Contact -->
+</body>
+</html>
