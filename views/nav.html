@@ -1,190 +1,192 @@
 <!-- Nav -->
 <div class="navbar navbar-default navbar-fixed-top"
      role="navigation">
-  <div class="container">
-    <!-- Collapse -->
-    <div class="navbar-header">
-      <button type="button"
-              class="navbar-toggle"
-              data-toggle="collapse"
-              data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/index.html">
-        <span><img src="/img/trt.svg" height="30px"/></span>
-      </a>
-    </div>
-    <!-- /Collapse -->
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-left">
-        <!-- Bikes dropdown -->
-        <li class="dropdown">
-          <a href="#"
-             class="dropdown-toggle"
-             data-toggle="dropdown">
-            Bicycles
-            <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-
-            <!-- Trek -->
-            <li class="dropdown-header bikes-header">
-              Trek
-            </li>
-            <li><a href="http://www.trekbikes.com/us/en/bikes/road/"
-                   target="_blank">
-              Road
-            </a></li>
-            <li><a href="http://www.trekbikes.com/us/en/bikes/mountain/"
-                   target="_blank">
-              Mountain
-            </a></li>
-            <li><a href="http://www.trekbikes.com/us/en/bikes/city/">
-              Hybrid
-            </a></li>
-            <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
-                   target="_blank">
-              Kids
-            </a></li>
-
-            <!-- BMC -->
-            <li class="dropdown-header bikes-header">
-              BMC
-            </li>
-            <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
-                   target="_blank">
-              Road
-            </a></li>
-            <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
-                   target="_blank">
-              Mountain
-            </a></li>
-            <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
-                   target="_blank">
-              Hybrid
-            </a></li>
-
-            <!-- Framed -->
-            <li class="dropdown-header bikes-header">
-              Framed Fat Bikes
-            </li>
-            <li><a href="http://www.framedbikes.com/wt-alloy-series/"
-                   target="_blank">
-              Wolftrax
-            </a>
-            </li>
-            <li><a href="http://www.framedbikes.com/ak-shimano-series/"
-                   target="_blank">
-              Alaskan
-            </a>
-            </li>
-            <li><a href="http://www.framedbikes.com/minnesota-series-dealers/"
-                   target="_blank">
-              Minnesota
-            </a>
-            </li>
-
-            <!-- Redline -->
-            <li class="dropdown-header bikes-header">
-              Redline
-            </li>
-            <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
-                   target="_blank">
-              BMX
-            </a></li>
-          </ul>
-          <!-- /Bikes dropdown -->
-
-        <li><a href="/views/rental.html">Rental</a></li>
-        <li><a href="/views/repair.html">Repair</a></li>
-        <li><a href="/views/fit.html">Fit</a></li>
-        <!--<li><a href="#about" data-toggle="modal">About</a></li>-->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a id="todayHours" href="#hours" data-toggle="modal"></a></li>
-        <li><a href="#contact" data-toggle="modal">(845)-658-7832</a></li>
-      </ul>
-      <script>
-        var today = new Date();
-        var day = today.getDay();
-
-        var summerHours = {
-          'mon': '11:00AM - 6:00PM',
-          'tue': 'CLOSED',
-          'wed': '11:00AM - 6:00PM',
-          'thu': '11:00AM - 7:00PM',
-          'fri': '11:00AM - 7:00PM',
-          'sat': '11:00AM - 5:00PM',
-          'sun': '11:00AM - 5:00PM'
-        };
-
-        var fallHours = {
-          'mon': '11:00AM - 6:00PM',
-          'tue': 'CLOSED',
-          'wed': '11:00AM - 6:00PM',
-          'thu': '11:00AM - 6:00PM',
-          'fri': '11:00AM - 6:00PM',
-          'sat': '11:00AM - 5:00PM',
-          'sun': '11:00AM - 5:00PM'
-        };
-
-        var winterHours = {
-          'mon': '11:00AM - 6:00PM',
-          'tue': 'CLOSED',
-          'wed': '11:00AM - 6:00PM',
-          'thu': 'CLOSED',
-          'fri': '11:00AM - 6:00PM',
-          'sat': '11:00AM - 5:00PM',
-          'sun': '12:00PM - 5:00PM'
-        };
-
-        var currentHours = fallHours;
-
-        // assign hours for today
-        var hours;
-        switch (day) {
-          // Monday
-          case 1:
-            hours = currentHours.mon;
-            break;
-          // Tuesday
-          case 2:
-            hours = currentHours.tue;
-            break;
-          // Wednesday
-          case 3:
-            hours = currentHours.wed;
-            break;
-          // Thursday
-          case 4:
-            hours = currentHours.thu;
-            break;
-          // Friday:
-          case 5:
-            hours = currentHours.fri;
-            break;
-          // Saturday
-          case 6:
-            hours = currentHours.sat;
-            break;
-          // Sunday
-          case 7:
-            hours = currentHours.sun;
-            break;
-          default:
-        }
-
-        if (hours === 'CLOSED') {
-          document.getElementById('todayHours').innerHTML = "Closed Today";
-        }
-        else {
-          document.getElementById('todayHours').innerHTML = "Open Today " + hours;
-        }
-      </script>
-    </div>
-    <!--/ .nav-collapse -->
+  <!-- Collapse -->
+  <div class="navbar-header">
+    <button type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/index.html">
+      <span><img src="/img/trt.svg" height="30px"/></span>
+    </a>
   </div>
+  <!-- /Collapse -->
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+      <!-- Bikes dropdown -->
+      <li class="dropdown">
+        <a href="#"
+           class="dropdown-toggle"
+           data-toggle="dropdown">
+          Bicycles
+          <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+
+          <!-- Trek -->
+          <li class="dropdown-header bikes-header">
+            Trek
+          </li>
+          <li><a href="http://www.trekbikes.com/us/en/bikes/road/"
+                 target="_blank">
+            Road
+          </a></li>
+          <li><a href="http://www.trekbikes.com/us/en/bikes/mountain/"
+                 target="_blank">
+            Mountain
+          </a></li>
+          <li><a href="http://www.trekbikes.com/us/en/bikes/city/">
+            Hybrid
+          </a></li>
+          <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                 target="_blank">
+            Kids
+          </a></li>
+
+          <!-- BMC -->
+          <li class="dropdown-header bikes-header">
+            BMC
+          </li>
+          <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                 target="_blank">
+            Road
+          </a></li>
+          <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                 target="_blank">
+            Mountain
+          </a></li>
+          <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                 target="_blank">
+            Hybrid
+          </a></li>
+
+          <!-- Framed -->
+          <li class="dropdown-header bikes-header">
+            Framed Fat Bikes
+          </li>
+          <li><a href="http://www.framedbikes.com/wt-alloy-series/"
+                 target="_blank">
+            Wolftrax
+          </a>
+          </li>
+          <li><a href="http://www.framedbikes.com/ak-shimano-series/"
+                 target="_blank">
+            Alaskan
+          </a>
+          </li>
+          <li><a href="http://www.framedbikes.com/minnesota-series-dealers/"
+                 target="_blank">
+            Minnesota
+          </a>
+          </li>
+
+          <!-- Redline -->
+          <li class="dropdown-header bikes-header">
+            Redline
+          </li>
+          <li><a href="http://www.trekbikes.com/us/en/bikes/city/"
+                 target="_blank">
+            BMX
+          </a></li>
+        </ul>
+        <!-- /Bikes dropdown -->
+
+      <li><a href="/views/rental.html">Rental</a></li>
+      <li><a href="/views/repair.html">Repair</a></li>
+      <li><a href="/views/fit.html">Fit</a></li>
+      <!--<li><a href="#about" data-toggle="modal">About</a></li>-->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a id="todayHours" href="#hours" data-toggle="modal"></a></li>
+      <li><a href="#contact" data-toggle="modal">(845)-658-7832</a></li>
+    </ul>
+    <script>
+      var today = new Date();
+      var weekDay = today.getDay();
+      var day = today.getDate();
+
+      var summerHours = {
+        'mon': '11:00AM - 6:00PM',
+        'tue': 'CLOSED',
+        'wed': '11:00AM - 6:00PM',
+        'thu': '11:00AM - 7:00PM',
+        'fri': '11:00AM - 7:00PM',
+        'sat': '11:00AM - 5:00PM',
+        'sun': '11:00AM - 5:00PM'
+      };
+
+      var fallHours = {
+        'mon': '11:00AM - 6:00PM',
+        'tue': 'CLOSED',
+        'wed': '11:00AM - 6:00PM',
+        'thu': '11:00AM - 6:00PM',
+        'fri': '11:00AM - 6:00PM',
+        'sat': '11:00AM - 5:00PM',
+        'sun': '11:00AM - 5:00PM'
+      };
+
+      var winterHours = {
+        'mon': '11:00AM - 6:00PM',
+        'tue': 'CLOSED',
+        'wed': '11:00AM - 6:00PM',
+        'thu': 'CLOSED',
+        'fri': '11:00AM - 6:00PM',
+        'sat': '11:00AM - 5:00PM',
+        'sun': '12:00PM - 5:00PM'
+      };
+
+      var closedDays = {};
+
+      var currentHours = fallHours;
+
+      // assign hours for today
+      var hours;
+      switch (weekDay) {
+        // Monday
+        case 1:
+          hours = currentHours.mon;
+          break;
+        // Tuesday
+        case 2:
+          hours = currentHours.tue;
+          break;
+        // Wednesday
+        case 3:
+          hours = currentHours.wed;
+          break;
+        // Thursday
+        case 4:
+          hours = currentHours.thu;
+          break;
+        // Friday:
+        case 5:
+          hours = currentHours.fri;
+          console.log("hey");
+          break;
+        // Saturday
+        case 6:
+          hours = currentHours.sat;
+          break;
+        // Sunday
+        case 0:
+          hours = currentHours.sun;
+          break;
+        default:
+      }
+
+      if (hours === 'CLOSED') {
+        document.getElementById('todayHours').innerHTML = "Closed Today";
+      }
+      else {
+        document.getElementById('todayHours').innerHTML = "Open Today " + hours;
+      }
+    </script>
+  </div>
+  <!--/ .nav-collapse -->
 </div>
 <!--/ Nav -->

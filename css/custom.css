@@ -23,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
 }
 
+.navbar {
+    margin-bottom: 0;
+}
+
 .navbar-default {
     background-color: #F3711A;
     border-color: #FFFFFF;
@@ -129,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bikes-header {
-	color: #B24801;
+    color: #B24801;
 }
 
 .navbar-text > a {
@@ -142,6 +146,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: stingray;
     src: url('/fonts/stingray.ttf');
 }
+
 .trt-heading {
     font-family: stingray;
     text-align: center;
@@ -150,14 +155,14 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     font-size: 9vw;
 }
-/* /custom TRT font*/
 
+/* /custom TRT font*/
 
 /* full page backgrounds */
 .full-width-background {
     height: 800px;
     width: 100%;
-    padding:0;
+    padding: 0;
     background-size: cover;
     background-position: center;
 }
@@ -180,7 +185,6 @@ h1, h2, h3, h4, h5, h6 {
     background: url('/img/rental.jpg') top center fixed;
     background-size: cover;
 }
-
 
 /* /full page backgrounds */
 
@@ -227,29 +231,34 @@ h1, h2, h3, h4, h5, h6 {
 #carousel-index {
     height: 300px;
 }
+
 #carousel-index-image-1 {
     height: 300px;
     background: url('/img/stock2.jpg') top center fixed;
     /*background-size: cover;*/
 }
+
 #carousel-index-image-2 {
     height: 300px;
     background: url('/img/service.jpg') top center;
     background-size: cover;
 
 }
+
 #carousel-index-image-3 {
     height: 300px;
     background: url('/img/fit.jpg') top center;
     background-size: cover;
 
 }
+
 #carousel-index-image-4 {
     height: 300px;
     background: url('/img/rental.jpg') top center;
     background-size: cover;
 
 }
+
 /* /Index Page Carousel*/
 
 /* footer */
@@ -261,25 +270,29 @@ h1, h2, h3, h4, h5, h6 {
 .watermark {
     font-size: 10px;
 }
+
 .watermark a {
     font-size: 10px;
     text-decoration: none;
     color: inherit;
 }
+
 /* /footer */
 
 /* Fit Page */
 #fit-banner {
-    background: url('/img/precisionFit.gif') ;
+    background: url('/img/precisionFit.gif');
     background-size: cover;
     height: 600px;
 }
+
 /* /Fit Page*/
 
 /* Repair Page */
 .repair-banner {
-    background: url('/img/repair-banner.jpg') center;
+    background: url('/img/repair-banner.jpg') center fixed;
     background-size: cover;
+    background-position-y: 425px;
     height: 200px;
 }
 
@@ -295,6 +308,7 @@ h1, h2, h3, h4, h5, h6 {
 .repair-list {
     text-align: center;
 }
+
 /* /Repair Page*/
 
 .map {
