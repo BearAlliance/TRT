@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5, h6 {
     /*font-family: 'proxima-nova', sans-serif;*/
 }
 
+.standard-font {
+    font-family: "Open Sans";
+}
+
 .margin {
     padding-top: 20px;
 }
@@ -170,12 +174,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
     font-family: 'museo_sans500';
-    src: url('MuseoSans_500-webfont.eot');
-    src: url('MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
-    url('MuseoSans_500-webfont.woff2') format('woff2'),
-    url('MuseoSans_500-webfont.woff') format('woff'),
-    url('MuseoSans_500-webfont.ttf') format('truetype'),
-    url('MuseoSans_500-webfont.svg#museo_sans500') format('svg');
+    src: url('/fonts/MuseoSans_500-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -264,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #carousel-index-image-2 {
     height: 300px;
-    background: url('/img/service.jpg') top center;
+    background: url('/img/finance.jpg') top center;
     background-size: cover;
 
 }

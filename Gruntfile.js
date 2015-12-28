@@ -1,25 +1,128 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-    // Project configuration.
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
-            build: {
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
-            }
+  // Project configuration.
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      build: {}
+    },
+    htmlmin: {                                     // Task
+      dist: {                                      // Target
+        options: {                                 // Target options
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {                                   // Dictionary of files
+          'build/index.html': 'index.html',     // 'destination': 'source'
+          'build/views/repair.html': 'views/repair.html',
+          'build/views/fit.html': 'views/fit.html',
+          'build/views/rental.html': 'views/rental.html',
+
+          //  css
+          'build/css/custom.css': 'css/custom.css'
         }
-    });
+      }
+    },
+    copy: {
+      main: {
+        files: [
+          // includes files within path
+          {expand: true, src: ['img/*'], dest: 'build/', filter: 'isFile'},
+          {expand: true, src: ['fonts/*'], dest: 'build/', filter: 'isFile'}
 
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+          // includes files within path and its sub-directories
+          //{expand: true, src: ['path/**'], dest: 'dest/'},
 
-    // Default task(s).
-    grunt.registerTask('default', ['uglify']);
+          // makes all src relative to cwd
+          //{expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'}
 
-    grunt.loadNpmTasks('grunt-serve');
+          // flattens results to a single level
+          //{expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'},
+        ]
+      }
+    },
+    clean: ["build/"],
+    serve: {
+      'path': 'index.html'
+    },
+    watch: {
+      gruntfile: {
+        files: ['Gruntfile.js'],
+        tasks: ['copy']
+      },
+      scripts: {
+        files: ['**/*.js'],
+        tasks: ['copy'],
+        options: {
+          spawn: false,
+        }
+      },
+      html: {
+        files: ['**/*.html'],
+        tasks: ['copy'],
+        options: {
+          livereload: true
+        }
+      },
+      css: {
+        files: ['**.*.css'],
+        tasks: ['copy'],
+        options: {
+
+        }
+      }
+    },
+    open : {
+      dev : {
+        path: 'http://localhost:9000/index.html',
+        app: 'Google Chrome'
+      },
+      build : {
+        path : 'localhost:9000/build/index.html',
+        app: 'Google Chrome'
+      },
+      file : {
+        path : '/etc/hosts'
+      },
+      custom: {
+        path : function () {
+          return grunt.option('path');
+        }
+      }
+    }
+  });
+
+  // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  //html minification
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
+  //copy
+  grunt.loadNpmTasks('grunt-contrib-copy');
+
+  //clean
+  grunt.loadNpmTasks('grunt-contrib-clean');
+
+  //watch
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  //serve
+  grunt.loadNpmTasks('grunt-serve');
+
+  //open
+  grunt.loadNpmTasks('grunt-open');
+
+  // Default task(s).
+  grunt.registerTask('default', ['clean', 'htmlmin', 'copy']);
+
+  // Build
+  grunt.registerTask('build', ['clean', 'htmlmin', 'copy']);
+
+  // Server
+  grunt.registerTask('server', ['open:dev', 'serve']);
 
 };
