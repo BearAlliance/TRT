@@ -20,6 +20,8 @@ module.exports = function (grunt) {
           'build/views/repair.html': 'views/repair.html',
           'build/views/fit.html': 'views/fit.html',
           'build/views/rental.html': 'views/rental.html',
+          'build/views/modals.html': 'views/modals.html',
+          'build/views/nav.html': 'views/nav.html',
 
           //  css
           'build/css/custom.css': 'css/custom.css'
@@ -31,7 +33,8 @@ module.exports = function (grunt) {
         files: [
           // includes files within path
           {expand: true, src: ['img/*'], dest: 'build/', filter: 'isFile'},
-          {expand: true, src: ['fonts/*'], dest: 'build/', filter: 'isFile'}
+          {expand: true, src: ['fonts/*'], dest: 'build/', filter: 'isFile'},
+          {expand: false, src: ['favicon.ico'], dest: 'build/'}
 
           // includes files within path and its sub-directories
           //{expand: true, src: ['path/**'], dest: 'dest/'},
