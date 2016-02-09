@@ -51,6 +51,20 @@ module.exports = function (grunt) {
     serve: {
       'path': 'index.html'
     },
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          hostname: 'localhost',
+          onCreateServer: function(server, connect, options) {
+            var io = require('socket.io').listen(server);
+            io.sockets.on('connection', function(socket) {
+              // do something with socket
+            });
+          }
+        }
+      }
+    },
     watch: {
       gruntfile: {
         files: ['Gruntfile.js'],
