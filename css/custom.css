@@ -389,6 +389,14 @@ h1, h2, h3, h4, h5, h6 {
     .center-heading {
         font-size: 4em;
     }
+
+    .dropdown-header {
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: 768px) {
