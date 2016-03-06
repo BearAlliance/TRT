@@ -1,7 +1,7 @@
 html {
     margin: 0;
     padding: 0;
-    museo-sans: "Helvetica Neue",Times,serif;
+    museo-sans: "Helvetica Neue", Times, serif;
 }
 
 body {
@@ -190,30 +190,29 @@ h1, h2, h3, h4, h5, h6 {
 
 /* full page backgrounds */
 .full-width-background {
-    height: 800px;
-    width: 100%;
+    height: 500px;
+    /*width: 100%;*/
+    max-width: 100%;
     padding: 0;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .section-1 {
-    background: url('/img/stock2.jpg') top center fixed;
+    background-image: url('/img/stock2.jpg');
 }
 
 .section-2 {
-    background: url('/img/service.jpg') top center fixed;
-    background-size: cover;
+    background-image: url('/img/service.jpg');
 }
 
 .section-3 {
-    background: url('/img/fit.jpg') top center fixed;
-    background-size: cover;
+    background-image: url('/img/fit.jpg');
 }
 
 .section-4 {
-    background: url('/img/rental.jpg') top center fixed;
-    background-size: cover;
+    background-image: url('/img/rental.jpg');
 }
 
 /* /full page backgrounds */
@@ -253,7 +252,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0;
 }
 
-
 /* Index page carousel */
 .carousel-index {
     height: 300px;
@@ -265,8 +263,9 @@ h1, h2, h3, h4, h5, h6 {
 
 #carousel-index-image-1 {
     height: 300px;
-    background: url('/img/stock2.jpg') top center fixed;
-    /*background-size: cover;*/
+    background: url('/img/stock2.jpg') center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #carousel-index-image-2 {
@@ -337,6 +336,7 @@ h1, h2, h3, h4, h5, h6 {
 .fit-description {
 
 }
+
 /* /Fit Page*/
 
 /* Rental Page */
@@ -347,6 +347,7 @@ h1, h2, h3, h4, h5, h6 {
     /*background-position-x: 800px;*/
     background-position-y: -30px;
 }
+
 /* /Rental Page */
 
 /* Repair Page */
@@ -397,6 +398,10 @@ h1, h2, h3, h4, h5, h6 {
     .dropdown-menu {
         text-align: center;
     }
+
+    #carousel-index-image-1 {
+        background: url('/img/dirt2.jpg') left ;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -411,5 +416,13 @@ h1, h2, h3, h4, h5, h6 {
         padding-top: 160px;
     }
 
+    .full-width-background {
+        background-attachment: fixed;
+    }
+
     /* /Fit Page*/
+    .repair-list {
+        min-height: 200px;
+    }
+
 }

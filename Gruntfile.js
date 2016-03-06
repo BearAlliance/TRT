@@ -22,7 +22,7 @@ module.exports = function (grunt) {
           'build/views/rental.html': 'views/rental.html',
           'build/views/modals.html': 'views/modals.html',
           'build/views/nav.html': 'views/nav.html',
-
+          'build/views/footer.html': 'views/footer.html',
           //  css
           'build/css/custom.css': 'css/custom.css'
         }
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
     },
     clean: ["build/"],
     serve: {
-      'path': 'index.html'
+      'path': 'build/index.html'
     },
     connect: {
       server: {
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
         app: 'Google Chrome'
       },
       build : {
-        path : 'localhost:9000/build/index.html',
+        path : 'http://localhost:9000/build/index.html',
         app: 'Google Chrome'
       },
       file : {
