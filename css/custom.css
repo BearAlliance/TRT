@@ -82,6 +82,9 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
 }
 
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: none;
+}
 .btn-primary {
     background-color: #2C3E50;
     border-color: #2C3E50;
@@ -270,14 +273,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #carousel-index-image-2 {
     height: 300px;
-    background: url('/img/finance.jpg') top center;
+    background: url('/img/williamsLake.png') top center;
     background-size: cover;
 
 }
 
 #carousel-index-image-3 {
     height: 300px;
-    background: url('/img/fit.jpg') top center;
+    background: url('/img/finance.jpg') top center;
     background-size: cover;
 
 }
@@ -287,6 +290,16 @@ h1, h2, h3, h4, h5, h6 {
     background: url('/img/rental.jpg') top center;
     background-size: cover;
 
+}
+
+.nav-icon:hover {
+    color: white;
+}
+
+.williams-lake-image {
+    background: url('/img/williamsLake.png');
+    background-size: cover;
+    display: block;
 }
 
 /* /Index Page Carousel*/
@@ -401,6 +414,10 @@ h1, h2, h3, h4, h5, h6 {
 
     #carousel-index-image-1 {
         background: url('/img/dirt2.jpg') left ;
+    }
+
+    .williams-lake-image {
+        height: 105px;
     }
 }
 
