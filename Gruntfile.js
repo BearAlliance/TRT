@@ -140,6 +140,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build', ['clean', 'htmlmin', 'copy']);
 
   // Server
-  grunt.registerTask('server', ['open:dev', 'serve']);
+  grunt.registerTask('server', ['build', 'open:dev', 'serve']);
 
 };
