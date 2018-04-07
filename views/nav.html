@@ -185,19 +185,19 @@
       var springHours = {
         'mon': '11:00AM - 6:00PM',
         'tue': 'CLOSED',
-        'wed': '11:00AM - 6:00PM',
-        'thu': '11:00AM - 6:00PM',
-        'fri': '11:00AM - 6:00PM',
-        'sat': '11:00AM - 5:00PM',
-        'sun': '11:00AM - 5:00PM'
+        'wed': '9:00AM - 6:00PM',
+        'thu': '9:00AM - 6:00PM',
+        'fri': '9:00AM - 6:00PM',
+        'sat': '9:00AM - 4:00PM',
+        'sun': '9:00AM - 4:00PM'
       };
 
       var summerHours = {
         'mon': '11:00AM - 6:00PM',
         'tue': 'CLOSED',
         'wed': '11:00AM - 6:00PM',
-        'thu': '11:00AM - 7:00PM',
-        'fri': '11:00AM - 7:00PM',
+        'thu': '11:00AM - 6:00PM',
+        'fri': '11:00AM - 6:00PM',
         'sat': '11:00AM - 5:00PM',
         'sun': '11:00AM - 5:00PM'
       };
@@ -220,55 +220,27 @@
         'fri': '11:00AM - 6:00PM',
         'sat': '11:00AM - 5:00PM',
         'sun': '12:00PM - 5:00PM'
-
-
       };
 
-      var closedDays = {};
-
       // Set season here, remember to update modals
-      var currentHours = summerHours;
+      var currentHours = springHours;
 
       // assign hours for today
-      var hours;
-      switch (weekDay) {
-        // Monday
-        case 1:
-          hours = currentHours.mon;
-          break;
-        // Tuesday
-        case 2:
-          hours = currentHours.tue;
-          break;
-        // Wednesday
-        case 3:
-          hours = currentHours.wed;
-          break;
-        // Thursday
-        case 4:
-          hours = currentHours.thu;
-          break;
-        // Friday:
-        case 5:
-          hours = currentHours.fri;
-          break;
-        // Saturday
-        case 6:
-          hours = currentHours.sat;
-          break;
-        // Sunday
-        case 0:
-          hours = currentHours.sun;
-          break;
-        default:
-      }
+      var hoursMap = {
+        1: currentHours.mon,
+        2: currentHours.tue,
+        3: currentHours.wed,
+        4: currentHours.thu,
+        5: currentHours.fri,
+        6: currentHours.sat,
+        0: currentHours.sun
+      };
+      var hours = hoursMap[weekDay];
 
-      if (hours === 'CLOSED') {
-        document.getElementById('todayHours').innerHTML = "Closed Today";
-      }
-      else {
-        document.getElementById('todayHours').innerHTML = "Open Today " + hours;
-      }
+      var todayHours = hours === 'CLOSED' ?
+        "Closed Today" :
+        "Open Today " + hours;
+      document.getElementById('todayHours').innerHTML = todayHours;
     </script>
   </div>
   <!--/ .nav-collapse -->
