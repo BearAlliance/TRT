@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BearAlliance/TRT.svg?branch=master)](https://travis-ci.org/BearAlliance/TRT)
+
 # trtbicycles.com
 
 Static billboard site for Table Rock Tours and Bicycles
