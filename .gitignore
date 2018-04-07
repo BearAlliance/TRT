@@ -1,14 +1,9 @@
 
 *.xml
 
-.idea/workspace.xml
+.idea/
 
-.idea
+build/
+node_modules/
 
-/build
-
-/node_modules
-
-*.lock
-
-*.DS_Storeå
+*.DS_Store
