@@ -1,0 +1,24 @@
+const express = require('express');
+const path = require('path');
+const morgan = require('morgan');
+const compression = require('compression');
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(morgan('common'));
+app.use(compression());
+
+app.get('*', function(req, res, next) {
+	if (
+		req.headers['x-forwarded-proto'] !== 'https' &&
+		process.env.NODE_ENV === 'production'
+	)
+		res.redirect(301, `https://${req.hostname}${req.url}`);
+	else next(); /* Continue to other routes if we're not redirecting */
+});
+
+app.use('/', express.static(path.join(__dirname, 'build')));
+// app.use('*', express.static(path.join(__dirname, 'build')));
+
+app.listen(port, () => console.log(`App listening on port ${port}!`));
