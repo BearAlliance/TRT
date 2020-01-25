@@ -221,6 +221,26 @@ h6 {
 
 /* /full page backgrounds */
 
+/* 404 page */
+.not-found-container {
+  background-image: url('/img/bike_crash.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vw;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.not-found-content {
+  position: absolute;
+  top: 250px;
+  left: 20px;
+}
+.not-found-header {
+  color: #b24801;
+}
+
 .center-heading {
   text-align: center;
   padding-top: 80px;
