@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-1 {
-    background-image: url('/img/stock2.jpg');
+    background-image: url('/img/factory-racing.jpg');
 }
 
 .section-2 {
@@ -263,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #carousel-index-image-1 {
     height: 300px;
-    background: url('/img/stock2.jpg') center;
+    background: url('/img/factory-racing.jpg') center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -337,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fit-heading {
-    font-family: stingray;
+	font-family: stingray, sans-serif;
     text-align: center;
 }
 
@@ -372,7 +372,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .repair-heading {
     text-align: center;
-    font-family: stingray;
+	font-family: stingray, sans-serif;
 }
 
 .repair-price {
