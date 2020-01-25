@@ -1,225 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145018984-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-145018984-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-    gtag('js', new Date());
+      gtag('js', new Date());
 
-    gtag('config', 'UA-145018984-2');
-  </script>
+      gtag('config', 'UA-145018984-2');
+    </script>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="google-site-verification" content="8zFooMshGNzztDRTVDxjNqbxyTZSyfaHqXiWVHhY_pw"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords"
-        content="Favata's, NY Bike Rentals, New York Bikes, NY Bicycle Store,Bicycle store, TRT, Table Rock Tours,Hudson Valley, Bicycles,  Table Rock Tours and Bicycles, Ride Race Live, Mountain Bike Rental, Road Bike Rental, Full service bike shop, Bike riding techniques, Upcoming bike events, Bikes, Parts, Repairs, Rides, Womens bikes, Men bikes,Road bicycles, Mountain Bicycles, Bike shop, The bike shop, Bike parts, Bikes on sale, Bike gear, Bike Accessories, Down hill bikes, Specialized bikes, BMX, Cycling shop"/>
-  <title>TRT Bicycles (845)-658-7832</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="google-site-verification"
+      content="8zFooMshGNzztDRTVDxjNqbxyTZSyfaHqXiWVHhY_pw"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Favata's, NY Bike Rentals, New York Bikes, NY Bicycle Store,Bicycle store, TRT, Table Rock Tours,Hudson Valley, Bicycles,  Table Rock Tours and Bicycles, Ride Race Live, Mountain Bike Rental, Road Bike Rental, Full service bike shop, Bike riding techniques, Upcoming bike events, Bikes, Parts, Repairs, Rides, Womens bikes, Men bikes,Road bicycles, Mountain Bicycles, Bike shop, The bike shop, Bike parts, Bikes on sale, Bike gear, Bike Accessories, Down hill bikes, Specialized bikes, BMX, Cycling shop"
+    />
+    <title>TRT Bicycles (845)-658-7832</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/ico" href="/img/favicon.ico"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/ico" href="/img/favicon.ico" />
 
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <!-- Bootstrap js -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <!-- Bootstrap CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-  <!-- FontAwesome -->
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <!-- Custom CSS -->
-  <link href="/css/custom.css" rel="stylesheet">
-</head>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <link
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Custom CSS -->
+    <link href="/css/custom.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
+    <!-- Nav -->
+    <div id="nav"></div>
+    <script>
+      $(function() {
+        $('#nav').load('/views/nav.html');
+      });
+    </script>
+    <!--/ Nav -->
 
-<!-- Nav -->
-<div id="nav"></div>
-<script>
-  $(function () {
-    $("#nav").load("/views/nav.html");
-  });
-</script>
-<!--/ Nav -->
+    <div class="index-content">
+      <!-- Carousel -->
+      <div
+        id="carousel-index"
+        class="carousel slide hidden-xs"
+        data-ride="carousel"
+      >
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carousel-index"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <!--<li data-target="#carousel-index" data-slide-to="1"></li>-->
+          <li data-target="#carousel-index" data-slide-to="2"></li>
+        </ol>
 
-<div class="index-content">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <!-- Carousel content -->
 
-  <!-- Carousel -->
-  <div id="carousel-index" class="carousel slide hidden-xs" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-index" data-slide-to="0" class="active"></li>
-      <!--<li data-target="#carousel-index" data-slide-to="1"></li>-->
-      <li data-target="#carousel-index" data-slide-to="2"></li>
-    </ol>
+          <!-- Splash -->
+          <div class="item active" id="carousel-index-image-1">
+            <div class="carousel-caption hide-xs"></div>
+          </div>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <!-- Carousel content -->
+          <!-- Trek Card -->
+          <div class="item" id="carousel-index-image-3">
+            <div class="carousel-caption">
+              <a href="https://d.comenity.net/trek/" target="_blank">
+                <button class="btn btn-primary">
+                  More Info
+                </button>
+              </a>
+            </div>
+          </div>
+          <!-- Rentals -->
+          <div class="item" id="carousel-index-image-4">
+            <div class="carousel-caption">
+              <h3>Rentals</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Carousel -->
 
-      <!-- Splash -->
-      <div class="item active" id="carousel-index-image-1">
-        <div class="carousel-caption hide-xs">
+      <!-- Main Page Content -->
+
+      <!-- Section 1 -->
+      <div class="full-width-background section-1">
+        <div class="col-xs-12">
+          <h1 class="trt-heading">TRT Bicycles</h1>
+          <h2 class="center-sub-heading">Family owned. Rider focused.</h2>
         </div>
       </div>
 
-      <!-- Trek Card -->
-      <div class="item" id="carousel-index-image-3">
-        <div class="carousel-caption">
-          <a href="https://d.comenity.net/trek/" target="_blank">
-            <button class="btn btn-primary">
-              More Info
-            </button>
-          </a>
+      <div class="container index-text">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-xs-12 col-md-6">
+            <h3>
+              We are a family of cyclists. Our entire family lives to ride. From
+              the professional to the weekend warrior we have the entire
+              spectrum of equipment and accessories covered. Cycling is our
+              passion, let us share it with the riders in your family.<br /><br />
+              We want our relationships to last as long as our bikes, so you can
+              count on us to take care of you and do what’s right. We stand
+              behind our bikes, and the people who ride them.
+            </h3>
+          </div>
+          <div class="col-md-3"></div>
         </div>
       </div>
-      <!-- Rentals -->
-      <div class="item" id="carousel-index-image-4">
-        <div class="carousel-caption">
-          <h3>Rentals</h3>
+
+      <!-- /section 1 -->
+
+      <!-- Section 2 -->
+
+      <div class="full-width-background section-2">
+        <div class="col-xs-12">
+          <h1 class="center-heading">Repair</h1>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- /Carousel -->
 
-  <!-- Main Page Content -->
-
-  <!-- Section 1 -->
-  <div class="full-width-background section-1">
-    <div class="col-xs-12">
-      <h1 class="trt-heading">TRT Bicycles</h1>
-      <h2 class="center-sub-heading">Family owned. Rider focused.</h2>
-    </div>
-  </div>
-
-  <div class="container index-text">
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-xs-12 col-md-6">
-        <h3>
-          We are a family of cyclists. Our entire family lives to ride. From the professional to the weekend
-          warrior we have the entire spectrum of equipment and accessories covered. Cycling is our passion, let us share
-          it with the riders in your family.<br><br>
-          We want our relationships to last as long as our bikes, so you can count on us to take care of you and do
-          what’s right. We stand behind our bikes, and the people who ride them.
-        </h3>
+      <div class="container index-text">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-xs-12 col-md-6">
+            <h3>
+              We have a highly trained staff that has the expertise to work on
+              any make or model. Not having your bike is a drag so we offer 24
+              hour turn around on repairs and a satisfaction guarantee.
+            </h3>
+            <a href="/views/repair.html">
+              <button class="btn btn-primary index-learn-more-button">
+                Learn More
+              </button>
+            </a>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
       </div>
-      <div class="col-md-3"></div>
-    </div>
-  </div>
 
-  <!-- /section 1 -->
+      <!-- /Section 2 -->
 
-  <!-- Section 2 -->
-
-  <div class="full-width-background section-2">
-    <div class="col-xs-12">
-      <h1 class="center-heading">Repair</h1>
-    </div>
-  </div>
-
-  <div class="container index-text">
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-xs-12 col-md-6">
-        <h3>We have a highly trained staff that has the expertise to work on any make or model. Not having your bike is
-          a drag so we offer 24 hour turn around on repairs and a satisfaction guarantee. </h3>
-        <a href="/views/repair.html">
-          <button class="btn btn-primary index-learn-more-button">
-            Learn More
-          </button>
-        </a>
+      <!-- Section 3 -->
+      <div class="full-width-background section-3">
+        <div class="col-xs-12">
+          <h1 class="center-heading">Fit</h1>
+        </div>
       </div>
-      <div class="col-md-3"></div>
-    </div>
-  </div>
 
-  <!-- /Section 2 -->
-
-  <!-- Section 3 -->
-  <div class="full-width-background section-3">
-    <div class="col-xs-12">
-      <h1 class="center-heading">Fit</h1>
-    </div>
-  </div>
-
-  <div class="container index-text">
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-xs-12 col-md-6">
-        <h3>
-          Trek Precision Fit Certified, TRT will get you riding right on your equipment. Shiny new time trial,
-          or tried and true hardtail. The fit makes the ride, and we know how to get you to where you need to
-          be
-        </h3>
-        <a href="/views/fit.html">
-          <button class="btn btn-primary index-learn-more-button">
-            Learn More
-          </button>
-        </a>
+      <div class="container index-text">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-xs-12 col-md-6">
+            <h3>
+              Trek Precision Fit Certified, TRT will get you riding right on
+              your equipment. Shiny new time trial, or tried and true hardtail.
+              The fit makes the ride, and we know how to get you to where you
+              need to be
+            </h3>
+            <a href="/views/fit.html">
+              <button class="btn btn-primary index-learn-more-button">
+                Learn More
+              </button>
+            </a>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
       </div>
-      <div class="col-md-3"></div>
-    </div>
-  </div>
 
-  <!-- /Section 3 -->
+      <!-- /Section 3 -->
 
-  <!-- Section 4 -->
-  <div class="full-width-background section-4">
-    <div class="col-xs-12">
-      <h1 class="center-heading">Rental</h1>
-    </div>
-  </div>
-
-  <div class="container index-text">
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-xs-12 col-md-6">
-        <h3>
-          Come enjoy a ride in the Hudson Valley! Rent one of our 2016 fleet, serviced after every ride, we
-          have a full range of sizes.
-        </h3>
-        <a href="/views/rental.html">
-          <button class="btn btn-primary index-learn-more-button">
-            Learn More
-          </button>
-        </a>
+      <!-- Section 4 -->
+      <div class="full-width-background section-4">
+        <div class="col-xs-12">
+          <h1 class="center-heading">Rental</h1>
+        </div>
       </div>
-      <div class="col-md-3"></div>
+
+      <div class="container index-text">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-xs-12 col-md-6">
+            <h3>
+              Come enjoy a ride in the Hudson Valley! Rent one of our 2016
+              fleet, serviced after every ride, we have a full range of sizes.
+            </h3>
+            <a href="/views/rental.html">
+              <button class="btn btn-primary index-learn-more-button">
+                Learn More
+              </button>
+            </a>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+      <!-- /Section 4 -->
     </div>
-  </div>
-  <!-- /Section 4 -->
+    <!-- /Main page content -->
 
-</div>
-<!-- /Main page content -->
+    <!-- Fixed footer -->
+    <div id="footer"></div>
+    <script>
+      $(function() {
+        $('#footer').load('/views/footer.html');
+      });
+    </script>
+    <!-- /Fixed footer-->
 
-<!-- Fixed footer -->
-<div id="footer"></div>
-<script>
-  $(function () {
-    $("#footer").load("/views/footer.html");
-  });
-</script>
-<!-- /Fixed footer-->
-
-<!-- Modals -->
-<div id="modals"></div>
-<script>
-  $(function () {
-    $("#modals").load("/views/modals.html");
-  });
-</script>
-<!-- /Modals-->
-
-</body>
+    <!-- Modals -->
+    <div id="modals"></div>
+    <script>
+      $(function() {
+        $('#modals').load('/views/modals.html');
+      });
+    </script>
+    <!-- /Modals-->
+  </body>
 </html>

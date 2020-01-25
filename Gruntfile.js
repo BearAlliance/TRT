@@ -1,21 +1,25 @@
-module.exports = function (grunt) {
-
+module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner:
+          '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {}
     },
-    htmlmin: {                                     // Task
-      dist: {                                      // Target
-        options: {                                 // Target options
+    htmlmin: {
+      // Task
+      dist: {
+        // Target
+        options: {
+          // Target options
           removeComments: true,
           collapseWhitespace: true
         },
-        files: {                                   // Dictionary of files
-          'build/index.html': 'index.html',     // 'destination': 'source'
+        files: {
+          // Dictionary of files
+          'build/index.html': 'index.html', // 'destination': 'source'
           'build/views/repair.html': 'views/repair.html',
           'build/views/fit.html': 'views/fit.html',
           'build/views/rental.html': 'views/rental.html',
@@ -31,9 +35,9 @@ module.exports = function (grunt) {
       main: {
         files: [
           // includes files within path
-          {expand: true, src: ['img/*'], dest: 'build/', filter: 'isFile'},
-          {expand: true, src: ['fonts/*'], dest: 'build/', filter: 'isFile'},
-          {expand: false, src: ['favicon.ico'], dest: 'build/'}
+          { expand: true, src: ['img/*'], dest: 'build/', filter: 'isFile' },
+          { expand: true, src: ['fonts/*'], dest: 'build/', filter: 'isFile' },
+          { expand: false, src: ['favicon.ico'], dest: 'build/' }
 
           // includes files within path and its sub-directories
           //{expand: true, src: ['path/**'], dest: 'dest/'},
@@ -46,9 +50,9 @@ module.exports = function (grunt) {
         ]
       }
     },
-    clean: ["build/"],
+    clean: ['build/'],
     serve: {
-      'path': 'build/index.html'
+      path: 'build/index.html'
     },
     connect: {
       server: {
@@ -86,25 +90,23 @@ module.exports = function (grunt) {
       css: {
         files: ['**.*.css'],
         tasks: ['copy'],
-        options: {
-
-        }
+        options: {}
       }
     },
-    open : {
-      dev : {
+    open: {
+      dev: {
         path: 'http://localhost:9000/index.html',
         app: 'Google Chrome'
       },
-      build : {
-        path : 'http://localhost:9000/build/index.html',
+      build: {
+        path: 'http://localhost:9000/build/index.html',
         app: 'Google Chrome'
       },
-      file : {
-        path : '/etc/hosts'
+      file: {
+        path: '/etc/hosts'
       },
       custom: {
-        path : function () {
+        path: function() {
           return grunt.option('path');
         }
       }
@@ -140,5 +142,4 @@ module.exports = function (grunt) {
 
   // Server
   grunt.registerTask('server', ['build', 'open:dev', 'serve']);
-
 };

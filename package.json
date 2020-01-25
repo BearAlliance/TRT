@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Static billboard site for TRT Bicycle Shop",
   "engines": {
-	"node": "12.x"
+    "node": "12.x"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -22,13 +22,17 @@
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-open": "^0.2.3",
-    "grunt-serve": "^0.1.6"
+    "grunt-serve": "^0.1.6",
+    "husky": "^4.2.1",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   },
   "scripts": {
     "test": "echo Error: no test specified",
     "start": "node server.js",
     "start:dev": "grunt server",
-    "build": "grunt build"
+    "build": "grunt build",
+    "prettier-fix": "prettier --write '**/*.+(ts|js|md|json|html|css)'"
   },
   "repository": {
     "type": "git",
@@ -39,5 +43,10 @@
   "bugs": {
     "url": "https://github.com/BearAlliance/TRT/issues"
   },
-  "homepage": "https://github.com/BearAlliance/TRT#readme"
+  "homepage": "https://github.com/BearAlliance/TRT#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
 }
