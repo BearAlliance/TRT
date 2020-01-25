@@ -19,6 +19,9 @@ app.get('*', function(req, res, next) {
 });
 
 app.use('/', express.static(path.join(__dirname, 'build')));
-// app.use('*', express.static(path.join(__dirname, 'build')));
+app.use(
+  '*',
+  express.static(path.join(__dirname, 'build/views/not-found.html'))
+);
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));

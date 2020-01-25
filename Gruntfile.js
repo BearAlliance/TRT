@@ -26,6 +26,7 @@ module.exports = function(grunt) {
           'build/views/modals.html': 'views/modals.html',
           'build/views/nav.html': 'views/nav.html',
           'build/views/footer.html': 'views/footer.html',
+          'build/views/not-found.html': 'views/not-found.html',
           //  css
           'build/css/custom.css': 'css/custom.css'
         }
