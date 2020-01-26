@@ -3,10 +3,16 @@
   <div class="container">
     <div class="navbar-text pull-left">
       <div class="watermark">
-        &copy TRT Bicycles 2016.<br />
-        Created by
-        <a target="_blank" href="http://nickcacace.com">Nick Cacace</a>
+        &copy TRT Bicycles <span id="copyright">2016</span>.<br />
+        <span
+          >Created by
+          <a target="_blank" href="http://nickcacace.com">Nick Cacace</a>
+        </span>
       </div>
+      <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('copyright').innerText = String(currentYear);
+      </script>
     </div>
 
     <div class="navbar-text pull-right">
