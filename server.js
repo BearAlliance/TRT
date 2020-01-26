@@ -2,11 +2,13 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const compression = require('compression');
+const helmet = require('helmet');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(morgan('common'));
+app.use(helmet());
 app.use(compression());
 
 app.get('*', function(req, res, next) {
