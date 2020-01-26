@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-  - "12"
+  - '12'
 cache:
   npm: true
 
 install:
   - npm install
 
-script: echo skipping tests
+script: npm test
 
 after_script: npm run build
