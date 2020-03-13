@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import trt from './trt.svg';
+import { Link } from 'react-router-dom';
 
 function NavLink({ label, url }) {
   return (
@@ -164,9 +165,9 @@ export function Nav() {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
+        <Link to="/home" className="navbar-item">
           <img src={trt} width="112" height="28" />
-        </a>
+        </Link>
 
         <a
           role="button"
@@ -182,9 +183,15 @@ export function Nav() {
 
       <div className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item">Rental</a>
-          <a className="navbar-item">Repair</a>
-          <a className="navbar-item">Fit</a>
+          <a className="navbar-item">
+            <Link to="/rental">Rental</Link>
+          </a>
+          <a className="navbar-item">
+            <Link to="/repair">Repair</Link>
+          </a>
+          <a className="navbar-item">
+            <Link to="/fit">Fit</Link>
+          </a>
 
           <SegmentedDropdown label="Bikes" categories={bikes} />
           <SegmentedDropdown label="Brands" categories={brands} />
