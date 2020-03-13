@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import trt from './trt.svg';
 import { Link } from 'react-router-dom';
+import { HoursNav } from './hours-nav';
 
 function NavLink({ label, url }) {
   return (
@@ -199,7 +200,9 @@ export function Nav() {
 
         <div className="navbar-end">
           <div className="navbar-item">
-            <a className="navbar-item">Open Today</a>
+            <a className="navbar-item">
+              <HoursNav />
+            </a>
             <a className="navbar-item">845-658-7832</a>
           </div>
         </div>
