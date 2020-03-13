@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ['.gitignore'],
   env: {
     browser: true,
     es6: true
@@ -23,5 +24,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react'],
-  rules: {}
+  rules: {
+    'react/prop-types': 0
+  }
 };
