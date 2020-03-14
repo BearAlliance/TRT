@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { HoursModal } from './hours-modal';
+import classNames from 'classnames';
+import { NavModalHours } from './nav-modal-hours';
 
-export function NavHours({ displayHours = true }) {
+export function NavHours({ displayHours = true, hiddenDesktop = false }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const weekDay = new Date().getDay();
@@ -66,9 +67,12 @@ export function NavHours({ displayHours = true }) {
   const toDisplay = displayHours ? withHours : withoutHours;
 
   return (
-    <a className="navbar-item">
+    <a
+      className={classNames('navbar-item', {
+        'is-hidden-desktop': hiddenDesktop
+      })}>
       <div onClick={() => setModalOpen(true)}>{toDisplay}</div>
-      <HoursModal
+      <NavModalHours
         title={'Winter Hours'}
         hours={currentHours}
         isActive={modalOpen}

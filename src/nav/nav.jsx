@@ -207,12 +207,8 @@ export function Nav() {
           <img src={trt} width="112" height="28" alt="trt-logo" />
         </Link>
 
-        <span className="is-hidden-desktop">
-          <NavHours displayHours={false} />
-        </span>
-        <span className="is-hidden-desktop">
-          <NavContact />
-        </span>
+        <NavHours displayHours={false} hiddenDesktop={true} />
+        <NavContact hiddenDesktop={true} />
 
         <a
           role="button"

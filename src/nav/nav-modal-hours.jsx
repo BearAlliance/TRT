@@ -5,7 +5,7 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export function HoursModal({ title, hours, isActive, onClose }) {
+export function NavModalHours({ title, hours, isActive, onClose }) {
   return (
     <div className={classNames('modal', { 'is-active': isActive })}>
       <div className="modal-background" />
