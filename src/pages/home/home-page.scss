@@ -9,3 +9,22 @@
 .splash-text {
   font-family: stingray, sans-serif;
 }
+
+.image-content {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+.repair-image {
+  background-image: url("./repair.webp");
+}
+
+.rental-image {
+  background-image: url("./rental.webp");
+}
+
+.fit-image {
+  background-image: url("./fit.webp");
+}
