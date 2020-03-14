@@ -12,7 +12,7 @@ function HeroSection({ content, title, imageName, linkPath }) {
             <p>{content}</p>
             <p className="column">
               <button className="button">
-                <Link to={linkPath}>Learn More</Link>
+                <Link to={linkPath}>{`Go to ${title}`}</Link>
               </button>
             </p>
           </div>
