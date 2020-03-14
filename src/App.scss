@@ -1,5 +1,12 @@
 @charset "utf-8";
 
-$footer-background-color: #222;
+$footer-background-color: #343434;
+$primary: #f3711a;
+$link: #f3711a;
+$link-hover: #D9DBF1;
+$family-secondary: #D9DBF1;
+$navbar-background-color: #222;
+$navbar-item-hover-background-color: #343434;
+$navbar-item-hover-color: #D9DBF1;
 
 @import "../node_modules/bulma/bulma.sass";
