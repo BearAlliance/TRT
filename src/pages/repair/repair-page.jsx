@@ -45,7 +45,7 @@ export default function RepairPage() {
 
   return (
     <div>
-      <div className="repair-banner">hi</div>
+      <div className="repair-banner" />
       <div className="container">
         <div className="hero">
           <h1 className="title">Tune Up Pricing</h1>

@@ -67,8 +67,7 @@ export default function HomePage() {
     },
     {
       title: 'Rental',
-      content:
-        'Come enjoy a ride in the Hudson Valley! Rent one of our 2016 fleet, serviced after every ride, we have a full range of sizes.',
+      content: `Come enjoy a ride in the Hudson Valley! Rent one of our ${new Date().getFullYear()} fleet, serviced after every ride, we have a full range of sizes.`,
       imageName: 'rental',
       linkPath: '/rental'
     },
