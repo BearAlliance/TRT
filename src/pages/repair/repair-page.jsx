@@ -64,8 +64,7 @@ export default function RepairPage() {
                 <ul>
                   {repairPackage.services.map(service => (
                     <li key={service}>
-                      <i className="fas fa-cog" />
-                      {service}
+                      <i className="fas fa-cog" /> {service}
                     </li>
                   ))}
                 </ul>
