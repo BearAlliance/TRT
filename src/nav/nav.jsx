@@ -250,6 +250,11 @@ export function Nav() {
 
           <SegmentedDropdown label="Bikes" categories={bikes} />
           <SegmentedDropdown label="Brands" categories={brands} />
+
+          <ExternalNavLink
+            label="Williams Lake Classic"
+            url="https://www.bikereg.com/williamslakeclassic"
+          />
         </div>
 
         <div className="navbar-end">
