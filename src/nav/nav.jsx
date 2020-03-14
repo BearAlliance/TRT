@@ -5,6 +5,7 @@ import trt from './trt.svg';
 import { Link } from 'react-router-dom';
 import { NavHours } from './nav-hours';
 import { NavContact } from './nav-contact';
+import './nav.scss';
 
 function ExternalNavLink({ label, url }) {
   return (
@@ -14,6 +15,8 @@ function ExternalNavLink({ label, url }) {
       href={url}
       target="_blank">
       {label}
+      {'   '}
+      <i className="fas fa-external-link-alt fa-xs left-pad" />
     </a>
   );
 }
