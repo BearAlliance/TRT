@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function FitPage() {
+export default function FitPage() {
   return <div>Fit page</div>;
 }

@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.scss';
 import { Nav } from './nav/nav';
-import { HomePage } from './pages/home/home-page';
-import { RepairPage } from './pages/repair/repair-page';
-import { RentalPage } from './pages/rental/rental-page';
-import { FitPage } from './pages/fit/fit-page';
+import { Loading } from './loading/loading';
+import { Footer } from './footer/footer';
 
 function RouteWithSubRoutes(route) {
   return (
@@ -23,19 +21,19 @@ function App() {
   const routes = [
     {
       path: '/home',
-      component: HomePage
+      component: lazy(() => import('./pages/home/home-page'))
     },
     {
       path: '/rental',
-      component: RentalPage
+      component: lazy(() => import('./pages/rental/rental-page'))
     },
     {
       path: '/repair',
-      component: RepairPage
+      component: lazy(() => import('./pages/repair/repair-page'))
     },
     {
       path: '/fit',
-      component: FitPage
+      component: lazy(() => import('./pages/fit/fit-page'))
     }
   ];
 
@@ -43,12 +41,15 @@ function App() {
     <Router>
       <Nav />
       <div>
-        <Switch>
-          {routes.map((route, i) => (
-            <RouteWithSubRoutes key={i} {...route} />
-          ))}
-        </Switch>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            {routes.map((route, i) => (
+              <RouteWithSubRoutes key={i} {...route} />
+            ))}
+          </Switch>
+        </Suspense>
       </div>
+      <Footer />
     </Router>
   );
 }

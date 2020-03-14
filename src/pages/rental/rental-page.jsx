@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function RentalPage() {
+export default function RentalPage() {
   return <div>Rental page</div>;
 }
