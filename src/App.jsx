@@ -1,5 +1,10 @@
 import React, { lazy, Suspense } from 'react';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import {
+  Route,
+  BrowserRouter as Router,
+  Switch,
+  Redirect
+} from 'react-router-dom';
 import './App.scss';
 import { Nav } from './nav/nav';
 import { Loading } from './loading/loading';
@@ -34,6 +39,12 @@ function App() {
     {
       path: '/fit',
       component: lazy(() => import('./pages/fit/fit-page'))
+    },
+    {
+      path: '/',
+      component: function RedirectToHome() {
+        return <Redirect to="/home" />;
+      }
     }
   ];
 
