@@ -26,17 +26,13 @@ export function NavModalContact({ onClose, isActive }) {
             <div className="level-item has-text-centered">
               <div>
                 <p className="heading">Phone</p>
-                <a className="has-text-black" href="tel:+18456587832">
-                  845-658-7832
-                </a>
+                <a href="tel:+18456587832">845-658-7832</a>
               </div>
             </div>
             <div className="level-item has-text-centered">
               <div>
                 <p className="heading">Email</p>
-                <a
-                  className="has-text-black"
-                  href="mailto:christian@trtbicycles.com">
+                <a href="mailto:christian@trtbicycles.com">
                   Christian@trtbicycles.com
                 </a>
               </div>

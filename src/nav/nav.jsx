@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import classNames from 'classnames';
+import { useLocation } from 'react-router-dom';
 import trt from './trt.svg';
 import { Link } from 'react-router-dom';
 import { NavHours } from './nav-hours';
@@ -50,10 +51,19 @@ function SegmentedDropdown({ label, categories }) {
 }
 
 function NavLink({ label, path }) {
+  const location = useLocation();
+  const isActive = location.pathname === path;
+  console.log(path, isActive);
   return (
-    <a className="navbar-item">
-      <Link to={path}>{label}</Link>
-    </a>
+    <div className="navbar-item">
+      <Link
+        className={classNames('has-text-secondary', {
+          'has-text-primary': isActive
+        })}
+        to={path}>
+        {label}
+      </Link>
+    </div>
   );
 }
 

@@ -5,13 +5,13 @@ $primary: #f3711a;
 $background: #d6d1cd;
 $link-hover: #D9DBF1;
 $family-secondary: #D9DBF1;
-$link: $family-secondary;
 $navbar-background-color: #222;
 $navbar-item-color: $family-secondary;
 $navbar-item-hover-background-color: #343434;
-$navbar-item-hover-color: $link;
+$navbar-item-hover-color: $family-secondary;
 $navbar-dropdown-background-color: $navbar-background-color;
 $navbar-dropdown-arrow: $primary;
+$navbar-item-active-color: $primary;
 
 $footer-background-color: #343434;
 
@@ -29,4 +29,8 @@ $footer-background-color: #343434;
 // For the fixed footer
 .page-content {
   margin-bottom: 40px;
+}
+
+.has-text-secondary {
+  color: $family-secondary;
 }
