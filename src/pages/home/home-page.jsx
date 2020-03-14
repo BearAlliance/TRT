@@ -29,23 +29,27 @@ function HeroSection({ content, title, imageName, linkPath }) {
 
 function ServicesLevel() {
   return (
-    <section className="level">
-      <div className="level-item has-text-centered">
-        <div>
-          <p className="heading">Tune-Ups</p>
-          <p className="title">Fast Turnaround</p>
-        </div>
-      </div>
-      <div className="level-item has-text-centered">
-        <div>
-          <p className="heading">Custom Fit</p>
-          <p className="title">Trek Certified</p>
-        </div>
-      </div>
-      <div className="level-item has-text-centered">
-        <div>
-          <p className="heading">Rentals</p>
-          <p className="title">Road and Mountain</p>
+    <section className="tile is-vertical is-parent">
+      <div className="tile is-child box">
+        <div className="level">
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Tune-Ups</p>
+              <p className="title">Fast Turnaround</p>
+            </div>
+          </div>
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Custom Fit</p>
+              <p className="title">Trek Certified</p>
+            </div>
+          </div>
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Rentals</p>
+              <p className="title">Road and Mountain</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
