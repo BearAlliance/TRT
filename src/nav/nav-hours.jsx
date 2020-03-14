@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { HoursModal } from './hours-modal';
 
-export function HoursNav() {
+export function NavHours({ displayHours = true }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const weekDay = new Date().getDay();
@@ -59,20 +59,21 @@ export function HoursNav() {
     0: currentHours.sunday
   };
 
-  const todayHours =
-    hoursMap[weekDay] === 'CLOSED'
-      ? 'Closed Today'
-      : 'Open Today ' + hoursMap[weekDay];
+  const withoutHours =
+    hoursMap[weekDay] === 'CLOSED' ? 'Closed Today' : 'Open Today ';
+  const withHours = `${withoutHours} ${hoursMap[weekDay]}`;
+
+  const toDisplay = displayHours ? withHours : withoutHours;
 
   return (
-    <Fragment>
-      <div onClick={() => setModalOpen(true)}>{todayHours}</div>
+    <a className="navbar-item">
+      <div onClick={() => setModalOpen(true)}>{toDisplay}</div>
       <HoursModal
         title={'Winter Hours'}
         hours={currentHours}
         isActive={modalOpen}
         onClose={() => setModalOpen(false)}
       />
-    </Fragment>
+    </a>
   );
 }

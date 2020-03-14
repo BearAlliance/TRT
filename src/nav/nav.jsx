@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import classNames from 'classnames';
 import trt from './trt.svg';
 import { Link } from 'react-router-dom';
-import { HoursNav } from './hours-nav';
+import { NavHours } from './nav-hours';
+import { NavContact } from './nav-contact';
 
-function NavLink({ label, url }) {
+function ExternalNavLink({ label, url }) {
   return (
     <a
       className="navbar-item"
@@ -20,15 +22,25 @@ function NavDropdownLabel({ label }) {
 }
 
 function SegmentedDropdown({ label, categories }) {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <div className="navbar-item has-dropdown is-hoverable">
+    <div
+      className={classNames('navbar-item', 'has-dropdown', 'is-hoverable', {
+        'is-active': isActive
+      })}
+      onClick={() => setIsActive(false)}>
       <a className="navbar-link">{label}</a>
       <div className="navbar-dropdown">
         {categories.map(category => (
           <Fragment key={category.label}>
             <NavDropdownLabel label={category.label} />
             {category.links.map(link => (
-              <NavLink key={link.url} label={link.label} url={link.url} />
+              <ExternalNavLink
+                key={link.url}
+                label={link.label}
+                url={link.url}
+              />
             ))}
           </Fragment>
         ))}
@@ -37,7 +49,17 @@ function SegmentedDropdown({ label, categories }) {
   );
 }
 
+function NavLink({ label, path }) {
+  return (
+    <a className="navbar-item">
+      <Link to={path}>{label}</Link>
+    </a>
+  );
+}
+
 export function Nav() {
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+
   const bikes = [
     {
       label: 'Trek',
@@ -163,48 +185,67 @@ export function Nav() {
     }
   ];
 
+  const navLinks = [
+    {
+      label: 'Rental',
+      path: '/rental'
+    },
+    {
+      label: 'Repair',
+      path: '/repair'
+    },
+    {
+      label: 'Fit',
+      path: '/fit'
+    }
+  ];
+
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/home" className="navbar-item">
-          <img src={trt} width="112" height="28" />
+          <img src={trt} width="112" height="28" alt="trt-logo" />
         </Link>
+
+        <span className="is-hidden-desktop">
+          <NavHours displayHours={false} />
+        </span>
+        <span className="is-hidden-desktop">
+          <NavContact />
+        </span>
 
         <a
           role="button"
-          className="navbar-burger burger"
+          className={classNames('navbar-burger', 'burger', {
+            'is-active': showBurgerMenu
+          })}
           aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample">
+          aria-expanded={showBurgerMenu}
+          onClick={() => setShowBurgerMenu(!showBurgerMenu)}>
           <span aria-hidden="true" />
           <span aria-hidden="true" />
           <span aria-hidden="true" />
         </a>
       </div>
 
-      <div className="navbar-menu">
+      <div
+        className={classNames('navbar-menu', { 'is-active': showBurgerMenu })}>
         <div className="navbar-start">
-          <a className="navbar-item">
-            <Link to="/rental">Rental</Link>
-          </a>
-          <a className="navbar-item">
-            <Link to="/repair">Repair</Link>
-          </a>
-          <a className="navbar-item">
-            <Link to="/fit">Fit</Link>
-          </a>
+          {navLinks.map(navLink => (
+            <NavLink
+              key={navLink.path}
+              label={navLink.label}
+              path={navLink.path}
+            />
+          ))}
 
           <SegmentedDropdown label="Bikes" categories={bikes} />
           <SegmentedDropdown label="Brands" categories={brands} />
         </div>
 
         <div className="navbar-end">
-          <div className="navbar-item">
-            <a className="navbar-item">
-              <HoursNav />
-            </a>
-            <a className="navbar-item">845-658-7832</a>
-          </div>
+          <NavHours />
+          <NavContact />
         </div>
       </div>
     </nav>

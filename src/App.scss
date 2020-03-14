@@ -1,12 +1,32 @@
 @charset "utf-8";
+@import './fonts/stingray.ttf';
 
-$footer-background-color: #343434;
 $primary: #f3711a;
-$link: #f3711a;
+$background: #d6d1cd;
 $link-hover: #D9DBF1;
 $family-secondary: #D9DBF1;
+$link: $family-secondary;
 $navbar-background-color: #222;
+$navbar-item-color: $family-secondary;
 $navbar-item-hover-background-color: #343434;
-$navbar-item-hover-color: #D9DBF1;
+$navbar-item-hover-color: $link;
+$navbar-dropdown-background-color: $navbar-background-color;
+$navbar-dropdown-arrow: $primary;
+
+$footer-background-color: #343434;
 
 @import "../node_modules/bulma/bulma.sass";
+
+@font-face {
+  font-family: 'stingray';
+  src: url("./fonts/stingray.ttf");
+}
+
+.brand-font {
+  font-family: stingray, sans-serif;
+}
+
+// For the fixed footer
+.page-content {
+  margin-bottom: 40px;
+}
