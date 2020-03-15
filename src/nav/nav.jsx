@@ -236,11 +236,9 @@ export function Nav() {
           <img src={trt} width="112" height="28" alt="trt-logo" />
         </Link>
 
-        <NavHours displayHours={false} hiddenDesktop={true} />
         <NavContact hiddenDesktop={true} />
 
         <a
-          href=" "
           role="button"
           className={classNames('navbar-burger', 'burger', {
             'is-active': showBurgerMenu
