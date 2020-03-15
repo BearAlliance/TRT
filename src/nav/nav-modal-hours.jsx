@@ -1,9 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+import { HoursTable } from './hours-table';
 
 export function NavModalHours({ title, hours, isActive, onClose }) {
   return (
@@ -15,16 +12,7 @@ export function NavModalHours({ title, hours, isActive, onClose }) {
           <button className="delete" aria-label="close" onClick={onClose} />
         </header>
         <section className="modal-card-body">
-          <table className="table is-striped is-hoverable is-fullwidth">
-            <tbody>
-              {Object.keys(hours).map(day => (
-                <tr key={day}>
-                  <td>{capitalizeFirstLetter(day)}</td>
-                  <td>{hours[day]}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <HoursTable hours={hours} />
         </section>
         <footer className="modal-card-foot">
           <button className="button" aria-label="close" onClick={onClose}>

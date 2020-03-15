@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
+import { HoursTable } from './hours-table';
+import { currentHours } from './hours';
 
 export function NavModalContact({ onClose, isActive }) {
   return (
@@ -23,6 +25,7 @@ export function NavModalContact({ onClose, isActive }) {
               />
             </div>
           </div>
+          <h1 className="title">Contact</h1>
           <div className="level">
             <div className="level-item has-text-centered">
               <div>
@@ -39,6 +42,8 @@ export function NavModalContact({ onClose, isActive }) {
               </div>
             </div>
           </div>
+          <h1 className="title">Hours</h1>
+          <HoursTable hours={currentHours} />
         </section>
         <footer className="modal-card-foot">
           <button className="button" aria-label="close" onClick={onClose}>

@@ -255,6 +255,8 @@ export function Nav() {
       <div
         className={classNames('navbar-menu', { 'is-active': showBurgerMenu })}>
         <div className="navbar-start">
+          <NavHours hiddenDesktop={true} />
+
           {navLinks.map(navLink => (
             <NavLink
               onClick={() => setShowBurgerMenu(false)}
