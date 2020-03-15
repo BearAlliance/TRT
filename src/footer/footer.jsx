@@ -13,7 +13,7 @@ export function Footer() {
       icon: 'fa-twitter'
     },
     {
-      href: 'https://www.instagram.com/explore/tags/trtbicycles/',
+      href: 'https://www.instagram.com/trtbicycles/',
       icon: 'fa-instagram'
     }
   ];
