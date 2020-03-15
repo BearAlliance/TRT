@@ -23,11 +23,7 @@ app.get('*', function(req, res, next) {
 });
 
 app.use('/', express.static(path.join(__dirname, 'build')));
-
-app.use(
-  '/static/logo.svg',
-  express.static(path.join(__dirname, 'static', 'logo.svg'))
-);
+app.use('*', express.static(path.join(__dirname, 'build')));
 
 // Only for non-ssl
 // app.use('*', express.static(path.join(__dirname, 'build')));
