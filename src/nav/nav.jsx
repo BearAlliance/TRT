@@ -28,9 +28,7 @@ function NavDropdownLabel({ label }) {
 function SegmentedDropdown({ label, categories }) {
   return (
     <div className="navbar-item has-dropdown is-hoverable">
-      <a className="navbar-link" href=" ">
-        {label}
-      </a>
+      <a className="navbar-link">{label}</a>
       <div className="navbar-dropdown">
         {categories.map(category => (
           <Fragment key={category.label}>
@@ -275,7 +273,7 @@ export function Nav() {
           />
         </div>
 
-        <div className="navbar-end">
+        <div className="navbar-end is-hidden-touch">
           <NavHours />
           <NavContact />
         </div>
