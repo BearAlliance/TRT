@@ -51,7 +51,7 @@ function App() {
   return (
     <Router>
       <Nav />
-      <div>
+      <div className="page-content">
         <Suspense fallback={<Loading />}>
           <Switch>
             {routes.map((route, i) => (
