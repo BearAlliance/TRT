@@ -60,11 +60,11 @@ export function NavHours({ displayHours = true, hiddenDesktop = false }) {
     0: currentHours.sunday
   };
 
-  const withoutHours =
-    hoursMap[weekDay] === 'CLOSED' ? 'Closed Today' : 'Open Today ';
+  const isClosed = hoursMap[weekDay] === 'CLOSED';
+  const withoutHours = isClosed ? 'Closed Today' : 'Open Today ';
   const withHours = `${withoutHours} ${hoursMap[weekDay]}`;
 
-  const toDisplay = displayHours ? withHours : withoutHours;
+  const toDisplay = displayHours && !isClosed ? withHours : withoutHours;
 
   return (
     <a
