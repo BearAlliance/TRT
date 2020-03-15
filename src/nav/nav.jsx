@@ -26,14 +26,8 @@ function NavDropdownLabel({ label }) {
 }
 
 function SegmentedDropdown({ label, categories }) {
-  const [isActive, setIsActive] = useState(false);
-
   return (
-    <div
-      className={classNames('navbar-item', 'has-dropdown', 'is-hoverable', {
-        'is-active': isActive
-      })}
-      onClick={() => setIsActive(false)}>
+    <div className="navbar-item has-dropdown is-hoverable">
       <a className="navbar-link">{label}</a>
       <div className="navbar-dropdown">
         {categories.map(category => (
@@ -53,13 +47,14 @@ function SegmentedDropdown({ label, categories }) {
   );
 }
 
-function NavLink({ label, path }) {
+function NavLink({ label, path, onClick }) {
   const location = useLocation();
   const isActive = location.pathname === path;
   console.log(path, isActive);
   return (
     <div className="navbar-item">
       <Link
+        onClick={onClick}
         className={classNames('has-text-secondary', {
           'has-text-primary': isActive
         })}
@@ -242,6 +237,7 @@ export function Nav() {
         <div className="navbar-start">
           {navLinks.map(navLink => (
             <NavLink
+              onClick={() => setShowBurgerMenu(false)}
               key={navLink.path}
               label={navLink.label}
               path={navLink.path}
