@@ -83,11 +83,9 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <section className="hero splash">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title splash-text">TRT Bicycles</h1>
-            <h2 className="subtitle">Family owned. Rider focused.</h2>
-          </div>
+        <div className="hero-body has-text-centered-mobile">
+          <h1 className="title splash-text has-text-primary">TRT Bicycles</h1>
+          <h2 className="subtitle">Family owned. Rider focused.</h2>
         </div>
       </section>
 
