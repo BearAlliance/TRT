@@ -5,7 +5,7 @@ cache:
   npm: true
 
 install:
-  - npm install
+  - npm ci
 
 script: npm test
 
