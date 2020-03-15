@@ -14,12 +14,20 @@ app.get('*', function(req, res, next) {
   if (
     req.headers['x-forwarded-proto'] != 'https' &&
     process.env.NODE_ENV === 'production'
-  )
+  ) {
     res.redirect(301, `https://${req.hostname}${req.url}`);
-  else next(); /* Continue to other routes if we're not redirecting */
+  } else {
+    /* Continue to other routes if we're not redirecting */
+    next();
+  }
 });
 
 app.use('/', express.static(path.join(__dirname, 'build')));
+
+app.use(
+  '/static/logo.svg',
+  express.static(path.join(__dirname, 'static', 'logo.svg'))
+);
 
 // Only for non-ssl
 // app.use('*', express.static(path.join(__dirname, 'build')));
