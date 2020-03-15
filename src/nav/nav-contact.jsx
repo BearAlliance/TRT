@@ -8,7 +8,6 @@ export function NavContact({ hiddenDesktop = false }) {
   return (
     <Fragment>
       <a
-        href=" "
         className={classNames('navbar-item', 'is-link', {
           'is-hidden-desktop': hiddenDesktop
         })}
