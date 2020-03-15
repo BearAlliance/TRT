@@ -91,40 +91,6 @@ export function Nav() {
       ]
     },
     {
-      label: 'bmc',
-      links: [
-        {
-          label: 'Road',
-          url: 'https://www.bmc-switzerland.com/us-en/bikes/road/'
-        },
-        {
-          label: 'Mountain',
-          url: 'https://www.bmc-switzerland.com/us-en/bikes/mountain/'
-        },
-        {
-          label: 'Hybrid',
-          url: 'https://www.bmc-switzerland.com/us-en/bikes/lifestyle/'
-        }
-      ]
-    },
-    {
-      label: 'Framed Fat Bikes',
-      links: [
-        {
-          label: 'Wolftrax',
-          url: 'https://www.framedbikes.com/wt-alloy-series/'
-        },
-        {
-          label: 'Alaskan',
-          url: 'https://www.framedbikes.com/ak-shimano-series/'
-        },
-        {
-          label: 'Minnesota',
-          url: 'https://www.framedbikes.com/minnesota-series-dealers/'
-        }
-      ]
-    },
-    {
       label: 'Redline',
       links: [
         {
