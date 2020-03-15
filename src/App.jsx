@@ -25,10 +25,6 @@ function RouteWithSubRoutes(route) {
 function App() {
   const routes = [
     {
-      path: '/home',
-      component: lazy(() => import('./pages/home/home-page'))
-    },
-    {
       path: '/rental',
       component: lazy(() => import('./pages/rental/rental-page'))
     },
@@ -41,10 +37,12 @@ function App() {
       component: lazy(() => import('./pages/fit/fit-page'))
     },
     {
+      path: '/not-found',
+      component: lazy(() => import('./pages/not-found/not-found'))
+    },
+    {
       path: '/',
-      component: function RedirectToHome() {
-        return <Redirect to="/home" />;
-      }
+      component: lazy(() => import('./pages/home/home-page'))
     }
   ];
 
@@ -57,6 +55,7 @@ function App() {
             {routes.map((route, i) => (
               <RouteWithSubRoutes key={i} {...route} />
             ))}
+            <Route render={() => <Redirect to="/not-found" />} />
           </Switch>
         </Suspense>
       </div>

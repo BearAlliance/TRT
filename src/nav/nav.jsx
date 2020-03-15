@@ -50,7 +50,6 @@ function SegmentedDropdown({ label, categories }) {
 function NavLink({ label, path, onClick }) {
   const location = useLocation();
   const isActive = location.pathname === path;
-  console.log(path, isActive);
   return (
     <div className="navbar-item">
       <Link
@@ -211,7 +210,7 @@ export function Nav() {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <Link to="/home" className="navbar-item">
+        <Link to="/" className="navbar-item">
           <img src={trt} width="112" height="28" alt="trt-logo" />
         </Link>
 

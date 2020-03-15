@@ -21,7 +21,7 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="content has-text-centered">
-        <p>
+        <div>
           <div className="is-pulled-left is-size-7">
             <div>
               <strong className="has-text-secondary">
@@ -45,7 +45,7 @@ export function Footer() {
               </a>
             ))}
           </div>
-        </p>
+        </div>
       </div>
     </footer>
   );
