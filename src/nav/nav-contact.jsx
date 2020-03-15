@@ -8,7 +8,8 @@ export function NavContact({ hiddenDesktop = false }) {
   return (
     <Fragment>
       <a
-        className={classNames('navbar-item', {
+        href=" "
+        className={classNames('navbar-item', 'is-link', {
           'is-hidden-desktop': hiddenDesktop
         })}
         onClick={() => setModalOpen(true)}>

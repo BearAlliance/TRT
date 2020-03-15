@@ -28,7 +28,9 @@ function NavDropdownLabel({ label }) {
 function SegmentedDropdown({ label, categories }) {
   return (
     <div className="navbar-item has-dropdown is-hoverable">
-      <a className="navbar-link">{label}</a>
+      <a className="navbar-link" href=" ">
+        {label}
+      </a>
       <div className="navbar-dropdown">
         {categories.map(category => (
           <Fragment key={category.label}>
@@ -238,6 +240,7 @@ export function Nav() {
         <NavContact hiddenDesktop={true} />
 
         <a
+          href=" "
           role="button"
           className={classNames('navbar-burger', 'burger', {
             'is-active': showBurgerMenu

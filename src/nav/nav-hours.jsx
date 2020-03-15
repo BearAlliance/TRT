@@ -68,6 +68,7 @@ export function NavHours({ displayHours = true, hiddenDesktop = false }) {
 
   return (
     <a
+      href=" "
       className={classNames('navbar-item', {
         'is-hidden-desktop': hiddenDesktop
       })}>
