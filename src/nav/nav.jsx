@@ -73,15 +73,20 @@ export function Nav() {
       links: [
         {
           label: 'Road',
-          url: ''
+          url: 'https://www.trekbikes.com/us/en/bikes/road/'
         },
         {
           label: 'Mountain',
-          url: ''
+          url: 'https://www.trekbikes.com/us/en/bikes/mountain/'
         },
         {
           label: 'Hybrid',
-          url: ''
+          url: 'https://www.trekbikes.com/us/en/bikes/city/'
+        },
+        {
+          label: 'Kids',
+          url:
+            'https://www.trekbikes.com/us/en_US/bikes/city-bikes/recreation-bikes/kids/c/B414'
         }
       ]
     },
@@ -90,15 +95,15 @@ export function Nav() {
       links: [
         {
           label: 'Road',
-          url: ''
+          url: 'https://www.bmc-switzerland.com/us-en/bikes/road/'
         },
         {
           label: 'Mountain',
-          url: ''
+          url: 'https://www.bmc-switzerland.com/us-en/bikes/mountain/'
         },
         {
           label: 'Hybrid',
-          url: ''
+          url: 'https://www.bmc-switzerland.com/us-en/bikes/lifestyle/'
         }
       ]
     },
@@ -107,15 +112,15 @@ export function Nav() {
       links: [
         {
           label: 'Wolftrax',
-          url: ''
+          url: 'https://www.framedbikes.com/wt-alloy-series/'
         },
         {
           label: 'Alaskan',
-          url: ''
+          url: 'https://www.framedbikes.com/ak-shimano-series/'
         },
         {
           label: 'Minnesota',
-          url: ''
+          url: 'https://www.framedbikes.com/minnesota-series-dealers/'
         }
       ]
     },
@@ -124,7 +129,7 @@ export function Nav() {
       links: [
         {
           label: 'BMX',
-          url: ''
+          url: 'https://redlinebicycles.com/'
         }
       ]
     }
@@ -136,19 +141,19 @@ export function Nav() {
       links: [
         {
           label: 'SRAM',
-          url: ''
+          url: 'https://www.sram.com/'
         },
         {
           label: 'Shimano',
-          url: ''
+          url: 'https://bike.shimano.com'
         },
         {
           label: 'Fox Racing Shox',
-          url: ''
+          url: 'https://www.ridefox.com'
         },
         {
           label: 'RockShox',
-          url: ''
+          url: 'https://www.sram.com/en/rockshox'
         }
       ]
     },
@@ -157,19 +162,20 @@ export function Nav() {
       links: [
         {
           label: 'Bontrager',
-          url: ''
+          url:
+            'https://www.trekbikes.com/us/en_US/company/our_brands/bontrager/'
         },
         {
           label: 'Park Tool',
-          url: ''
+          url: 'https://www.parktool.com/'
         },
         {
           label: 'Vie13',
-          url: ''
+          url: 'https://vie13.com'
         },
         {
           label: 'Northwave',
-          url: ''
+          url: 'https://www.northwave.com'
         }
       ]
     },
@@ -178,15 +184,29 @@ export function Nav() {
       links: [
         {
           label: 'Mavic',
-          url: ''
+          url: 'https://www.mavic.us/'
         },
         {
           label: 'Bontrager',
-          url: ''
+          url:
+            'https://www.trekbikes.com/us/en_US/equipment/cycling-components/bike-wheels/c/E209/'
         },
         {
           label: "Stan's NoTubes",
-          url: ''
+          url: 'https://www.notubes.com/'
+        }
+      ]
+    },
+    {
+      label: 'Auto Racks',
+      links: [
+        {
+          label: 'Saris',
+          url: 'https://www.saris.com'
+        },
+        {
+          label: 'Thule',
+          url: 'https://www.thule.com/en-us/us'
         }
       ]
     }
