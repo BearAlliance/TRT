@@ -12,12 +12,14 @@ export default function RentalPage() {
       <div className="rental-banner" />
       <div className="container">
         <div className="hero">
-          <h1 className="title brand-font">Bicycle Rental</h1>
-          <h1 className="subtitle">
-            Come enjoy a ride in the Hudson Valley! Rent one of our{' '}
-            {new Date().getFullYear()} fleet, serviced after every ride, we have
-            a full range of sizes.
-          </h1>
+          <div className="hero-body">
+            <h1 className="title brand-font">Bicycle Rental</h1>
+            <h2 className="subtitle">
+              Come enjoy a ride in the Hudson Valley! Rent one of our{' '}
+              {new Date().getFullYear()} fleet, serviced after every ride, we
+              have a full range of sizes.
+            </h2>
+          </div>
         </div>
 
         <section className="tile is-vertical is-parent">
