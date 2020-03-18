@@ -196,7 +196,10 @@ export function Nav() {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
+        <Link
+          to="/"
+          className="navbar-item"
+          onClick={() => setShowBurgerMenu(false)}>
           <img src={trt} width="112" height="28" alt="trt-logo" />
         </Link>
 
