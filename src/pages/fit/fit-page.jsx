@@ -73,32 +73,28 @@ export default function FitPage() {
         </div>
 
         {fitPackages.map(pack => (
-          <section key={pack.title} className="tile is-ancestor">
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <div className="columns">
-                  <div className="column is-6">
-                    <span className="title has-text-primary">
-                      {pack.title}{' '}
-                    </span>
-                    <span className="title is-size-4 has-text-grey">
-                      - ${pack.price}
-                    </span>
-                    <p className="is-size-5">{pack.description}</p>
-                    <ul>
-                      {pack.includes.map(item => (
-                        <li key={item}>
-                          <i className="fas fa-cog" /> {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <p>{pack.subText}</p>
-                  </div>
-                  <div className="column is-6">
-                    <figure className="image">
-                      <img alt="bike-fit" src={pack.image} />
-                    </figure>
-                  </div>
+          <section key={pack.title} className="tile is-parent">
+            <div className="tile is-child box">
+              <div className="columns">
+                <div className="column is-6">
+                  <span className="title has-text-primary">{pack.title} </span>
+                  <span className="title is-size-4 has-text-grey">
+                    - ${pack.price}
+                  </span>
+                  <p className="is-size-5">{pack.description}</p>
+                  <ul>
+                    {pack.includes.map(item => (
+                      <li key={item}>
+                        <i className="fas fa-cog" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p>{pack.subText}</p>
+                </div>
+                <div className="column is-6">
+                  <figure className="image">
+                    <img alt="bike-fit" src={pack.image} />
+                  </figure>
                 </div>
               </div>
             </div>
