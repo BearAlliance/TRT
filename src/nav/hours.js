@@ -36,11 +36,20 @@ const hours = {
     friday: '11:00AM - 6:00PM',
     saturday: '11:00AM - 4:00PM',
     sunday: 'CLOSED'
+  },
+  covid: {
+    monday: '11:00AM - 5:00PM',
+    tuesday: 'CLOSED',
+    wednesday: '11:00AM - 5:00PM',
+    thursday: 'CLOSED',
+    friday: '11:00AM - 5:00PM',
+    saturday: '11:00AM - 4:00PM',
+    sunday: 'CLOSED'
   }
 };
 
 // Set season here
-export const currentHours = hours.spring;
+export const currentHours = hours.covid;
 
 // assign hours for today
 const hoursMap = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import './home-page.scss';
 import { Link } from 'react-router-dom';
+import { CovidBanner } from './covid-banner';
 
 function HeroSection({ content, title, imageName, linkPath }) {
   return (
@@ -82,6 +83,7 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
+      <CovidBanner />
       <section className="hero splash">
         <div className="hero-body has-text-centered-mobile">
           <h1 className="title splash-text has-text-primary">TRT Bicycles</h1>
