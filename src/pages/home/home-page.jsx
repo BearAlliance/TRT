@@ -2,8 +2,11 @@ import React from 'react';
 import './home-page.scss';
 import { Link } from 'react-router-dom';
 import { CovidBanner } from './covid-banner';
+import repairImage from './repair.jpg';
+import rentalImage from './rental.jpg';
+import fitImage from './fit.jpg';
 
-function HeroSection({ content, title, imageName, linkPath }) {
+function HeroSection({ content, title, image, imageName, linkPath }) {
   return (
     <section className="section">
       <div className="tile is-ancestor">
@@ -19,9 +22,9 @@ function HeroSection({ content, title, imageName, linkPath }) {
           </div>
         </div>
         <div className="tile is-parent">
-          <div
-            className={`tile is-child box ${imageName}-image image-content`}
-          />
+          <figure className="image">
+            <img loading="lazy" src={image} alt={imageName} />
+          </figure>
         </div>
       </div>
     </section>
@@ -63,12 +66,14 @@ export default function HomePage() {
       title: 'Repair',
       content:
         'We have a highly trained staff that has the expertise to work on any make or model. Not having your bike is a drag so we offer 24 hour turn around on repairs and a satisfaction guarantee.',
+      image: repairImage,
       imageName: 'repair',
       linkPath: '/repair'
     },
     {
       title: 'Rental',
       content: `Come enjoy a ride in the Hudson Valley! Rent one of our ${new Date().getFullYear()} fleet, serviced after every ride, we have a full range of sizes.`,
+      image: rentalImage,
       imageName: 'rental',
       linkPath: '/rental'
     },
@@ -76,6 +81,7 @@ export default function HomePage() {
       title: 'Fit',
       content:
         'Trek Precision Fit Certified, TRT will get you riding right on your equipment. Shiny new time trial, or tried and true hardtail. The fit makes the ride, and we know how to get you to where you need to be.',
+      image: fitImage,
       imageName: 'fit',
       linkPath: '/fit'
     }
@@ -114,6 +120,7 @@ export default function HomePage() {
           content={section.content}
           imageName={section.imageName}
           linkPath={section.linkPath}
+          image={section.image}
         />
       ))}
     </div>
