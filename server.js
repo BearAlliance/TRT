@@ -6,6 +6,11 @@ const app = express();
 const compression = require('compression');
 const port = process.env.PORT || 3000;
 
+function longCache(req, res, next) {
+  res.set('Cache-Control', 'max-age=31536000');
+  next();
+}
+
 app.use(morgan('common'));
 app.use(compression());
 
@@ -22,8 +27,8 @@ app.get('*', function(req, res, next) {
   }
 });
 
-app.use('/', express.static(path.join(__dirname, 'build')));
-app.use('*', express.static(path.join(__dirname, 'build')));
+app.use('/', longCache, express.static(path.join(__dirname, 'build')));
+app.use('*', longCache, express.static(path.join(__dirname, 'build')));
 
 // Only for non-ssl
 // app.use('*', express.static(path.join(__dirname, 'build')));

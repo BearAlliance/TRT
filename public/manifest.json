@@ -1,15 +1,17 @@
 {
   "short_name": "TRT Bicycles",
   "name": "Table Rock Tours and Bicycles",
+  "description": "Table rock Tours and bicycle shop. Rosendale NY",
   "icons": [
     {
-      "src": "favicon.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "./trt-logo-square.png",
+      "sizes": "640x640",
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "theme_color": "#f3711a",
+  "background_color": "#343434"
 }
