@@ -97,25 +97,29 @@ export default function RepairPage() {
           </div>
         </div>
 
-        {repairPackages.map(repairPackage => (
-          <div key={repairPackage.title} className="tile is-parent">
-            <div className="tile is-child box">
-              <p className="title brand-font has-text-centered">
-                {repairPackage.title}
-              </p>
-              <p className="subtitle has-text-centered">
-                {repairPackage.price}
-              </p>
-              <ul>
-                {repairPackage.services.map(service => (
-                  <li key={service}>
-                    <i className="fas fa-cog" /> {service}
-                  </li>
-                ))}
-              </ul>
+        <div className="tile is-ancestor">
+          {repairPackages.map(repairPackage => (
+            <div
+              key={repairPackage.title}
+              className="tile is-vertical is-parent">
+              <div className="tile is-child box">
+                <p className="title brand-font has-text-centered">
+                  {repairPackage.title}
+                </p>
+                <p className="subtitle has-text-centered">
+                  {repairPackage.price}
+                </p>
+                <ul>
+                  {repairPackage.services.map(service => (
+                    <li key={service}>
+                      <i className="fas fa-cog" /> {service}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
