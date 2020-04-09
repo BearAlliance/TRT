@@ -93,7 +93,7 @@ export default function FitPage() {
                 </div>
                 <div className="column is-6">
                   <figure className="image">
-                    <img alt="bike-fit" src={pack.image} />
+                    <img alt="bike-fit" src={pack.image} loading="lazy" />
                   </figure>
                 </div>
               </div>
