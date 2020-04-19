@@ -8,7 +8,7 @@ export function HoursTable({ hours }) {
   return (
     <table className="table is-striped is-hoverable is-fullwidth">
       <tbody>
-        {Object.keys(hours).map(day => (
+        {Object.keys(hours).map((day) => (
           <tr key={day}>
             <td>{capitalizeFirstLetter(day)}</td>
             <td>{hours[day]}</td>

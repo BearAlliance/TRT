@@ -4,7 +4,7 @@
 $primary: #f3711a;
 $background: #d6d1cd;
 $link-hover: $primary;
-$family-secondary: #D9DBF1;
+$family-secondary: #d9dbf1;
 $navbar-background-color: #222;
 $navbar-item-color: $family-secondary;
 $navbar-item-hover-background-color: #343434;
@@ -15,11 +15,11 @@ $navbar-item-active-color: $primary;
 
 $footer-background-color: #343434;
 
-@import "../node_modules/bulma/bulma.sass";
+@import '../node_modules/bulma/bulma.sass';
 
 @font-face {
   font-family: 'stingray';
-  src: url("./fonts/stingray.ttf");
+  src: url('./fonts/stingray.ttf');
 }
 
 .brand-font {

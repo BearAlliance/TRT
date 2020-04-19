@@ -13,9 +13,8 @@
     "build": "react-scripts build",
     "test": "npm run prettier:check && react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --ignore-path .gitignore **/*.{js,jsx,md}",
-    "prettier:check": "npm run prettier -- --check",
-    "prettier:write": "npm run prettier -- --write"
+    "prettier:check": "prettier --check --ignore-path .gitignore .",
+    "prettier:write": "prettier --write --ignore-path .gitignore ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,7 +46,7 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "node-sass": "^4.13.1",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",

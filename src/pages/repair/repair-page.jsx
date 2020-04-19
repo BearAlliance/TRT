@@ -47,8 +47,8 @@ export default function RepairPage() {
         'Adjust shifting and breaking',
         'Replace worn cables and pads',
         'True wheels, check wheel bearings',
-        'Fresh Lube'
-      ]
+        'Fresh Lube',
+      ],
     },
     {
       title: 'Werx',
@@ -60,8 +60,8 @@ export default function RepairPage() {
         'Replace worn cables and pads',
         'True wheels, check wheel bearings',
         'Remove and degrease drive train',
-        'Fresh Lube'
-      ]
+        'Fresh Lube',
+      ],
     },
     {
       title: 'Overhaul',
@@ -73,9 +73,9 @@ export default function RepairPage() {
         'Re-assemble with fresh grease',
         'Adjust shifting and breaking',
         'Replace worn cables and pads',
-        'True Both Wheels, rebuild or replace wheel bearings'
-      ]
-    }
+        'True Both Wheels, rebuild or replace wheel bearings',
+      ],
+    },
   ];
 
   return (
@@ -98,7 +98,7 @@ export default function RepairPage() {
         </div>
 
         <div className="tile is-ancestor">
-          {repairPackages.map(repairPackage => (
+          {repairPackages.map((repairPackage) => (
             <div
               key={repairPackage.title}
               className="tile is-vertical is-parent">
@@ -110,7 +110,7 @@ export default function RepairPage() {
                   {repairPackage.price}
                 </p>
                 <ul>
-                  {repairPackage.services.map(service => (
+                  {repairPackage.services.map((service) => (
                     <li key={service}>
                       <i className="fas fa-cog" /> {service}
                     </li>

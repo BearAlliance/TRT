@@ -30,10 +30,10 @@ function SegmentedDropdown({ label, categories }) {
     <div className="navbar-item has-dropdown is-hoverable">
       <a className="navbar-link">{label}</a>
       <div className="navbar-dropdown">
-        {categories.map(category => (
+        {categories.map((category) => (
           <Fragment key={category.label}>
             <NavDropdownLabel label={category.label} />
-            {category.links.map(link => (
+            {category.links.map((link) => (
               <ExternalNavLink
                 key={link.url}
                 label={link.label}
@@ -55,7 +55,7 @@ function NavLink({ label, path, onClick }) {
       <Link
         onClick={onClick}
         className={classNames('has-text-secondary', {
-          'has-text-primary': isActive
+          'has-text-primary': isActive,
         })}
         to={path}>
         {label}
@@ -73,32 +73,32 @@ export function Nav() {
       links: [
         {
           label: 'Road',
-          url: 'https://www.trekbikes.com/us/en/bikes/road/'
+          url: 'https://www.trekbikes.com/us/en/bikes/road/',
         },
         {
           label: 'Mountain',
-          url: 'https://www.trekbikes.com/us/en/bikes/mountain/'
+          url: 'https://www.trekbikes.com/us/en/bikes/mountain/',
         },
         {
           label: 'Hybrid',
-          url: 'https://www.trekbikes.com/us/en/bikes/city/'
+          url: 'https://www.trekbikes.com/us/en/bikes/city/',
         },
         {
           label: 'Kids',
           url:
-            'https://www.trekbikes.com/us/en_US/bikes/city-bikes/recreation-bikes/kids/c/B414'
-        }
-      ]
+            'https://www.trekbikes.com/us/en_US/bikes/city-bikes/recreation-bikes/kids/c/B414',
+        },
+      ],
     },
     {
       label: 'Redline',
       links: [
         {
           label: 'BMX',
-          url: 'https://redlinebicycles.com/'
-        }
-      ]
-    }
+          url: 'https://redlinebicycles.com/',
+        },
+      ],
+    },
   ];
 
   const brands = [
@@ -107,21 +107,21 @@ export function Nav() {
       links: [
         {
           label: 'SRAM',
-          url: 'https://www.sram.com/'
+          url: 'https://www.sram.com/',
         },
         {
           label: 'Shimano',
-          url: 'https://bike.shimano.com'
+          url: 'https://bike.shimano.com',
         },
         {
           label: 'Fox Racing Shox',
-          url: 'https://www.ridefox.com'
+          url: 'https://www.ridefox.com',
         },
         {
           label: 'RockShox',
-          url: 'https://www.sram.com/en/rockshox'
-        }
-      ]
+          url: 'https://www.sram.com/en/rockshox',
+        },
+      ],
     },
     {
       label: 'Accessories',
@@ -129,68 +129,68 @@ export function Nav() {
         {
           label: 'Bontrager',
           url:
-            'https://www.trekbikes.com/us/en_US/company/our_brands/bontrager/'
+            'https://www.trekbikes.com/us/en_US/company/our_brands/bontrager/',
         },
         {
           label: 'Park Tool',
-          url: 'https://www.parktool.com/'
+          url: 'https://www.parktool.com/',
         },
         {
           label: 'Vie13',
-          url: 'https://vie13.com'
+          url: 'https://vie13.com',
         },
         {
           label: 'Northwave',
-          url: 'https://www.northwave.com'
-        }
-      ]
+          url: 'https://www.northwave.com',
+        },
+      ],
     },
     {
       label: 'Wheels',
       links: [
         {
           label: 'Mavic',
-          url: 'https://www.mavic.us/'
+          url: 'https://www.mavic.us/',
         },
         {
           label: 'Bontrager',
           url:
-            'https://www.trekbikes.com/us/en_US/equipment/cycling-components/bike-wheels/c/E209/'
+            'https://www.trekbikes.com/us/en_US/equipment/cycling-components/bike-wheels/c/E209/',
         },
         {
           label: "Stan's NoTubes",
-          url: 'https://www.notubes.com/'
-        }
-      ]
+          url: 'https://www.notubes.com/',
+        },
+      ],
     },
     {
       label: 'Auto Racks',
       links: [
         {
           label: 'Saris',
-          url: 'https://www.saris.com'
+          url: 'https://www.saris.com',
         },
         {
           label: 'Thule',
-          url: 'https://www.thule.com/en-us/us'
-        }
-      ]
-    }
+          url: 'https://www.thule.com/en-us/us',
+        },
+      ],
+    },
   ];
 
   const navLinks = [
     {
       label: 'Rental',
-      path: '/rental'
+      path: '/rental',
     },
     {
       label: 'Repair',
-      path: '/repair'
+      path: '/repair',
     },
     {
       label: 'Fit',
-      path: '/fit'
-    }
+      path: '/fit',
+    },
   ];
 
   return (
@@ -208,7 +208,7 @@ export function Nav() {
         <a
           role="button"
           className={classNames('navbar-burger', 'burger', {
-            'is-active': showBurgerMenu
+            'is-active': showBurgerMenu,
           })}
           aria-label="menu"
           aria-expanded={showBurgerMenu}
@@ -224,7 +224,7 @@ export function Nav() {
         <div className="navbar-start">
           <NavHours hiddenDesktop={true} />
 
-          {navLinks.map(navLink => (
+          {navLinks.map((navLink) => (
             <NavLink
               onClick={() => setShowBurgerMenu(false)}
               key={navLink.path}

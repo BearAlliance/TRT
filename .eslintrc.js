@@ -3,12 +3,12 @@ module.exports = {
   ignorePatterns: ['.gitignore'],
   env: {
     browser: true,
-    es6: true
+    es6: true,
   },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'eslint-config-prettier'
+    'eslint-config-prettier',
   ],
   globals: {
     Atomics: 'readonly',
@@ -17,17 +17,17 @@ module.exports = {
     test: 'readonly',
     expect: 'readonly',
     require: 'readonly',
-    __dirname: 'readonly'
+    __dirname: 'readonly',
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react'],
   rules: {
-    'react/prop-types': 0
-  }
+    'react/prop-types': 0,
+  },
 };

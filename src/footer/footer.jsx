@@ -6,16 +6,16 @@ export function Footer() {
   const socialLinks = [
     {
       href: 'https://www.facebook.com/favatastrtbicycles',
-      icon: 'fa-facebook-f'
+      icon: 'fa-facebook-f',
     },
     {
       href: 'https://twitter.com/christianfavata',
-      icon: 'fa-twitter'
+      icon: 'fa-twitter',
     },
     {
       href: 'https://www.instagram.com/trtbicycles/',
-      icon: 'fa-instagram'
-    }
+      icon: 'fa-instagram',
+    },
   ];
 
   return (
@@ -33,7 +33,7 @@ export function Footer() {
             </div>
           </div>
           <div className="is-pulled-right">
-            {socialLinks.map(socialLink => (
+            {socialLinks.map((socialLink) => (
               <a
                 key={socialLink.icon}
                 aria-label={socialLink.icon}

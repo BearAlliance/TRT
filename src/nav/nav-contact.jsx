@@ -9,7 +9,7 @@ export function NavContact({ hiddenDesktop = false }) {
     <Fragment>
       <a
         className={classNames('navbar-item', 'is-link', {
-          'is-hidden-desktop': hiddenDesktop
+          'is-hidden-desktop': hiddenDesktop,
         })}
         onClick={() => setModalOpen(true)}>
         845-658-7832

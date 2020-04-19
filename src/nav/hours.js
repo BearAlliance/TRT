@@ -8,7 +8,7 @@ const hours = {
     thursday: '11:00AM - 6:00PM',
     friday: '11:00AM - 6:00PM',
     saturday: '11:00AM - 4:00PM',
-    sunday: 'CLOSED'
+    sunday: 'CLOSED',
   },
   summer: {
     monday: '11:00AM - 6:00PM',
@@ -17,7 +17,7 @@ const hours = {
     thursday: '11:00AM - 6:00PM',
     friday: '11:00AM - 6:00PM',
     saturday: '11:00AM - 5:00PM',
-    sunday: '11:00AM - 5:00PM'
+    sunday: '11:00AM - 5:00PM',
   },
   fall: {
     monday: '11:00AM - 6:00PM',
@@ -26,7 +26,7 @@ const hours = {
     thursday: '11:00AM - 6:00PM',
     friday: '11:00AM - 6:00PM',
     saturday: '11:00AM - 5:00PM',
-    sunday: '11:00AM - 5:00PM'
+    sunday: '11:00AM - 5:00PM',
   },
   winter: {
     monday: '11:00AM - 6:00PM',
@@ -35,7 +35,7 @@ const hours = {
     thursday: '11:00AM - 6:00PM',
     friday: '11:00AM - 6:00PM',
     saturday: '11:00AM - 4:00PM',
-    sunday: 'CLOSED'
+    sunday: 'CLOSED',
   },
   covid: {
     monday: '11:00AM - 5:00PM',
@@ -44,8 +44,8 @@ const hours = {
     thursday: 'CLOSED',
     friday: '11:00AM - 5:00PM',
     saturday: '11:00AM - 4:00PM',
-    sunday: 'CLOSED'
-  }
+    sunday: 'CLOSED',
+  },
 };
 
 // Set season here
@@ -59,7 +59,7 @@ const hoursMap = {
   4: currentHours.thursday,
   5: currentHours.friday,
   6: currentHours.saturday,
-  0: currentHours.sunday
+  0: currentHours.sunday,
 };
 
 export const isClosed = hoursMap[weekDay] === 'CLOSED';

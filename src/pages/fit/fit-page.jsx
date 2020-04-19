@@ -16,7 +16,7 @@ export default function FitPage() {
         'Buying new shoes or a new saddle? Cleats worn out? This fit addresses the lower body including saddle and cleat positions to make sure the feet, legs, and hips are aligned and tracking properly.',
       includes: [],
       subText: 'Recommended for spin class participants',
-      image: cleat
+      image: cleat,
     },
     {
       title: 'Road Fit',
@@ -29,10 +29,10 @@ export default function FitPage() {
         'Saddle height',
         'Saddle fore/aft position',
         'Stem length & position',
-        'Handlebar width & position'
+        'Handlebar width & position',
       ],
       subText: 'Please allow approximately 1.5 hours',
-      image: roadFit
+      image: roadFit,
     },
     {
       title: 'Triathlon Fit',
@@ -46,11 +46,11 @@ export default function FitPage() {
         'Saddle height',
         'Saddle fore/aft position',
         'Stem length & position',
-        'Aerobar pad height/reach'
+        'Aerobar pad height/reach',
       ],
       subText: 'Please allow approximately 2 hours',
-      image: triFit
-    }
+      image: triFit,
+    },
   ];
   return (
     <Fragment>
@@ -72,7 +72,7 @@ export default function FitPage() {
           </div>
         </div>
 
-        {fitPackages.map(pack => (
+        {fitPackages.map((pack) => (
           <section key={pack.title} className="tile is-parent">
             <div className="tile is-child box">
               <div className="columns">
@@ -83,7 +83,7 @@ export default function FitPage() {
                   </span>
                   <p className="is-size-5">{pack.description}</p>
                   <ul>
-                    {pack.includes.map(item => (
+                    {pack.includes.map((item) => (
                       <li key={item}>
                         <i className="fas fa-cog" /> {item}
                       </li>

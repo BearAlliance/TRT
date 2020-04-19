@@ -3,7 +3,7 @@ import {
   Route,
   BrowserRouter as Router,
   Switch,
-  Redirect
+  Redirect,
 } from 'react-router-dom';
 import './App.scss';
 import { Nav } from './nav/nav';
@@ -14,7 +14,7 @@ function RouteWithSubRoutes(route) {
   return (
     <Route
       path={route.path}
-      render={props => (
+      render={(props) => (
         // pass the sub-routes down to keep nesting
         <route.component {...props} routes={route.routes} />
       )}
@@ -26,24 +26,24 @@ function App() {
   const routes = [
     {
       path: '/rental',
-      component: lazy(() => import('./pages/rental/rental-page'))
+      component: lazy(() => import('./pages/rental/rental-page')),
     },
     {
       path: '/repair',
-      component: lazy(() => import('./pages/repair/repair-page'))
+      component: lazy(() => import('./pages/repair/repair-page')),
     },
     {
       path: '/fit',
-      component: lazy(() => import('./pages/fit/fit-page'))
+      component: lazy(() => import('./pages/fit/fit-page')),
     },
     {
       path: '/not-found',
-      component: lazy(() => import('./pages/not-found/not-found'))
+      component: lazy(() => import('./pages/not-found/not-found')),
     },
     {
       path: '/',
-      component: lazy(() => import('./pages/home/home-page'))
-    }
+      component: lazy(() => import('./pages/home/home-page')),
+    },
   ];
 
   return (

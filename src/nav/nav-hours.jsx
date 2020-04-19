@@ -11,7 +11,7 @@ export function NavHours({ displayHours = true, hiddenDesktop = false }) {
   return (
     <a
       className={classNames('navbar-item', {
-        'is-hidden-desktop': hiddenDesktop
+        'is-hidden-desktop': hiddenDesktop,
       })}>
       <div onClick={() => setModalOpen(true)}>{toDisplay}</div>
       <NavModalHours

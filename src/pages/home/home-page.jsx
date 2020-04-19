@@ -68,14 +68,14 @@ export default function HomePage() {
         'We have a highly trained staff that has the expertise to work on any make or model. Not having your bike is a drag so we offer 24 hour turn around on repairs and a satisfaction guarantee.',
       image: repairImage,
       imageName: 'repair',
-      linkPath: '/repair'
+      linkPath: '/repair',
     },
     {
       title: 'Rental',
       content: `Come enjoy a ride in the Hudson Valley! Rent one of our ${new Date().getFullYear()} fleet, serviced after every ride, we have a full range of sizes.`,
       image: rentalImage,
       imageName: 'rental',
-      linkPath: '/rental'
+      linkPath: '/rental',
     },
     {
       title: 'Fit',
@@ -83,8 +83,8 @@ export default function HomePage() {
         'Trek Precision Fit Certified, TRT will get you riding right on your equipment. Shiny new time trial, or tried and true hardtail. The fit makes the ride, and we know how to get you to where you need to be.',
       image: fitImage,
       imageName: 'fit',
-      linkPath: '/fit'
-    }
+      linkPath: '/fit',
+    },
   ];
 
   return (
@@ -113,7 +113,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {sections.map(section => (
+      {sections.map((section) => (
         <HeroSection
           key={section.title}
           title={section.title}

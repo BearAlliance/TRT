@@ -5,7 +5,7 @@ export default function RentalPage() {
   const rentals = [
     ['Road', 'Trek Road', '$20', '$40'],
     ['Mountain', 'Trek Marlin', '$20', '$50'],
-    ['Fat Bike', 'Trek Farley', '$20', '$50']
+    ['Fat Bike', 'Trek Farley', '$20', '$50'],
   ];
   return (
     <div>
@@ -34,9 +34,9 @@ export default function RentalPage() {
                 </tr>
               </thead>
               <tbody>
-                {rentals.map(rental => (
+                {rentals.map((rental) => (
                   <tr key={rental}>
-                    {rental.map(data => (
+                    {rental.map((data) => (
                       <td key={data}>{data}</td>
                     ))}
                   </tr>

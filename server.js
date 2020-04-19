@@ -15,7 +15,7 @@ app.use(morgan('common'));
 app.use(compression());
 
 // Only when using SSL
-app.get('*', function(req, res, next) {
+app.get('*', function (req, res, next) {
   if (
     req.headers['x-forwarded-proto'] != 'https' &&
     process.env.NODE_ENV === 'production'
