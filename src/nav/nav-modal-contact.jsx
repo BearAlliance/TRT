@@ -35,6 +35,14 @@ export function NavModalContact({ onClose, isActive }) {
           </div>
         </div>
       </div>
+      <div className="level">
+        <div className="level-item has-text-centered">
+          <div>
+            <p className="heading">Address</p>
+            <address>1066 NY-32, Rosendale, NY 12472</address>
+          </div>
+        </div>
+      </div>
       <h1 className="title">Hours</h1>
       <HoursTable hours={currentHours} />
     </Modal>
