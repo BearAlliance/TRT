@@ -1,7 +1,6 @@
 import React from 'react';
 import './home-page.scss';
 import { Link } from 'react-router-dom';
-import { CovidBanner } from './covid-banner';
 import repairImage from './repair.jpg';
 import rentalImage from './rental.jpg';
 import fitImage from './fit.jpg';
@@ -89,7 +88,6 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      <CovidBanner />
       <section className="hero splash">
         <div className="hero-body has-text-centered-mobile">
           <h1 className="title splash-text has-text-primary">TRT Bicycles</h1>
