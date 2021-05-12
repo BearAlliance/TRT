@@ -1,55 +1,72 @@
 const weekDay = new Date().getDay();
 
-const hours = {
+const seasons = {
   spring: {
-    monday: '11:00AM - 6:00PM',
-    tuesday: '11:00AM - 6:00PM',
-    wednesday: '11:00AM - 6:00PM',
-    thursday: '11:00AM - 6:00PM',
-    friday: '11:00AM - 6:00PM',
-    saturday: '11:00AM - 4:00PM',
-    sunday: 'CLOSED',
+    name: 'Spring',
+    hours: {
+      monday: '11:00AM - 6:00PM',
+      tuesday: '11:00AM - 6:00PM',
+      wednesday: '11:00AM - 6:00PM',
+      thursday: '11:00AM - 6:00PM',
+      friday: '11:00AM - 6:00PM',
+      saturday: '11:00AM - 4:00PM',
+      sunday: 'CLOSED',
+    },
   },
   summer: {
-    monday: '11:00AM - 6:00PM',
-    tuesday: 'CLOSED',
-    wednesday: '11:00AM - 6:00PM',
-    thursday: '11:00AM - 6:00PM',
-    friday: '11:00AM - 6:00PM',
-    saturday: '11:00AM - 5:00PM',
-    sunday: '11:00AM - 5:00PM',
+    name: 'Summer',
+    hours: {
+      monday: '11:00AM - 5:00PM',
+      tuesday: 'CLOSED',
+      wednesday: '11:00AM - 5:00PM',
+      thursday: '11:00AM - 5:00PM',
+      friday: '11:00AM - 5:00PM',
+      saturday: '11:00AM - 4:00PM',
+      sunday: 'CLOSED',
+    },
   },
   fall: {
-    monday: '11:00AM - 6:00PM',
-    tuesday: 'CLOSED',
-    wednesday: '11:00AM - 6:00PM',
-    thursday: '11:00AM - 6:00PM',
-    friday: '11:00AM - 6:00PM',
-    saturday: '11:00AM - 5:00PM',
-    sunday: '11:00AM - 5:00PM',
+    name: 'Fall',
+    hours: {
+      monday: '11:00AM - 6:00PM',
+      tuesday: 'CLOSED',
+      wednesday: '11:00AM - 6:00PM',
+      thursday: '11:00AM - 6:00PM',
+      friday: '11:00AM - 6:00PM',
+      saturday: '11:00AM - 5:00PM',
+      sunday: '11:00AM - 5:00PM',
+    },
   },
   winter: {
-    monday: '11:00AM - 6:00PM',
-    tuesday: 'CLOSED',
-    wednesday: '11:00AM - 6:00PM',
-    thursday: '11:00AM - 6:00PM',
-    friday: '11:00AM - 6:00PM',
-    saturday: '11:00AM - 4:00PM',
-    sunday: 'CLOSED',
+    name: 'Winter',
+    hours: {
+      monday: '11:00AM - 6:00PM',
+      tuesday: 'CLOSED',
+      wednesday: '11:00AM - 6:00PM',
+      thursday: '11:00AM - 6:00PM',
+      friday: '11:00AM - 6:00PM',
+      saturday: '11:00AM - 4:00PM',
+      sunday: 'CLOSED',
+    },
   },
   covid: {
-    monday: '11:00AM - 5:00PM',
-    tuesday: 'CLOSED',
-    wednesday: '11:00AM - 5:00PM',
-    thursday: 'CLOSED',
-    friday: '11:00AM - 5:00PM',
-    saturday: '11:00AM - 4:00PM',
-    sunday: 'CLOSED',
+    name: 'Covid',
+    hours: {
+      monday: '11:00AM - 5:00PM',
+      tuesday: 'CLOSED',
+      wednesday: '11:00AM - 5:00PM',
+      thursday: 'CLOSED',
+      friday: '11:00AM - 5:00PM',
+      saturday: '11:00AM - 4:00PM',
+      sunday: 'CLOSED',
+    },
   },
 };
 
 // Set season here
-export const currentHours = hours.covid;
+export const currentSeason = seasons.summer;
+export const currentHours = currentSeason.hours;
+export const hoursLabel = `${currentSeason.name} Hours`;
 
 // assign hours for today
 const hoursMap = {

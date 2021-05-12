@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { NavModalHours } from './nav-modal-hours';
-import { currentHours, isClosed, withHours, withoutHours } from './hours';
+import {
+  currentHours,
+  isClosed,
+  withHours,
+  withoutHours,
+  hoursLabel,
+} from './hours';
 
 export function NavHours({ displayHours = true, hiddenDesktop = false }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -15,7 +21,7 @@ export function NavHours({ displayHours = true, hiddenDesktop = false }) {
       })}>
       <div onClick={() => setModalOpen(true)}>{toDisplay}</div>
       <NavModalHours
-        title={'Winter Hours'}
+        title={hoursLabel}
         hours={currentHours}
         isActive={modalOpen}
         onClose={() => setModalOpen(false)}
