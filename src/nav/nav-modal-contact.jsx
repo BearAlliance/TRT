@@ -19,30 +19,32 @@ export function NavModalContact({ onClose, isActive }) {
         </div>
       </div>
       <h1 className="title">Contact</h1>
-      <div className="level">
-        <div className="level-item has-text-centered">
-          <div>
-            <p className="heading">Phone</p>
-            <a href="tel:+18456587832">845-658-7832</a>
+      <address>
+        <div className="level">
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Phone</p>
+              <a href="tel:+18456587832">845-658-7832</a>
+            </div>
+          </div>
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Email</p>
+              <a href="mailto:christian@trtbicycles.com">
+                Christian@trtbicycles.com
+              </a>
+            </div>
           </div>
         </div>
-        <div className="level-item has-text-centered">
-          <div>
-            <p className="heading">Email</p>
-            <a href="mailto:christian@trtbicycles.com">
-              Christian@trtbicycles.com
-            </a>
+        <div className="level">
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Address</p>
+              <address>1066 NY-32, Rosendale, NY 12472</address>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="level">
-        <div className="level-item has-text-centered">
-          <div>
-            <p className="heading">Address</p>
-            <address>1066 NY-32, Rosendale, NY 12472</address>
-          </div>
-        </div>
-      </div>
+      </address>
       <h1 className="title">Hours</h1>
       <HoursTable hours={currentHours} />
     </Modal>
