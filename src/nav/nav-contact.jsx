@@ -12,7 +12,7 @@ export function NavContact({ hiddenDesktop = false }) {
           'is-hidden-desktop': hiddenDesktop,
         })}
         onClick={() => setModalOpen(true)}>
-        845-658-7832
+        Contact Us - 845-658-7832
       </a>
 
       <NavModalContact
