@@ -2,6 +2,7 @@ import React from 'react';
 import { HoursTable } from './hours-table';
 import { currentHours } from './hours';
 import { Modal } from '../components/modal';
+import { address, contactEmail, phone } from '../constants';
 
 export function NavModalContact({ onClose, isActive }) {
   return (
@@ -24,15 +25,13 @@ export function NavModalContact({ onClose, isActive }) {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Phone</p>
-              <a href="tel:+18456587832">845-658-7832</a>
+              <a href="tel:+18456587832">{phone}</a>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Email</p>
-              <a href="mailto:christian@trtbicycles.com">
-                Christian@trtbicycles.com
-              </a>
+              <a href="mailto:christian@trtbicycles.com">{contactEmail}</a>
             </div>
           </div>
         </div>
@@ -40,7 +39,7 @@ export function NavModalContact({ onClose, isActive }) {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Address</p>
-              <address>1066 NY-32, Rosendale, NY 12472</address>
+              <address>{address}</address>
             </div>
           </div>
         </div>
