@@ -3,6 +3,7 @@ import { HoursTable } from './hours-table';
 import { currentHours } from './hours';
 import { Modal } from '../components/modal';
 import { address, contactEmail, phone } from '../constants';
+import { SocialLinks } from '../components/social-links';
 
 export function NavModalContact({ onClose, isActive }) {
   return (
@@ -44,6 +45,11 @@ export function NavModalContact({ onClose, isActive }) {
           </div>
         </div>
       </address>
+
+      <div className="section has-text-centered">
+        <SocialLinks />
+      </div>
+
       <h1 className="title">Hours</h1>
       <HoursTable hours={currentHours} />
     </Modal>
