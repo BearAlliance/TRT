@@ -1,5 +1,4 @@
 module.exports = {
-  parser: 'babel-eslint',
   ignorePatterns: ['.gitignore'],
   env: {
     browser: true,
