@@ -85,8 +85,7 @@ export function Nav() {
         },
         {
           label: 'Kids',
-          url:
-            'https://www.trekbikes.com/us/en_US/bikes/city-bikes/recreation-bikes/kids/c/B414',
+          url: 'https://www.trekbikes.com/us/en_US/bikes/city-bikes/recreation-bikes/kids/c/B414',
         },
       ],
     },
@@ -128,8 +127,7 @@ export function Nav() {
       links: [
         {
           label: 'Bontrager',
-          url:
-            'https://www.trekbikes.com/us/en_US/company/our_brands/bontrager/',
+          url: 'https://www.trekbikes.com/us/en_US/company/our_brands/bontrager/',
         },
         {
           label: 'Park Tool',
@@ -154,8 +152,7 @@ export function Nav() {
         },
         {
           label: 'Bontrager',
-          url:
-            'https://www.trekbikes.com/us/en_US/equipment/cycling-components/bike-wheels/c/E209/',
+          url: 'https://www.trekbikes.com/us/en_US/equipment/cycling-components/bike-wheels/c/E209/',
         },
         {
           label: "Stan's NoTubes",
