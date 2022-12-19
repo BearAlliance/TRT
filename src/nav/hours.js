@@ -45,7 +45,7 @@ const seasons = {
       wednesday: '11:00AM - 5:00PM',
       thursday: 'CLOSED',
       friday: '11:00AM - 5:00PM',
-      saturday: '11:00AM - 4:00PM',
+      saturday: '10:00AM - 2:00PM',
       sunday: 'CLOSED',
     },
   },
@@ -64,7 +64,7 @@ const seasons = {
 };
 
 // Set season here
-export const currentSeason = seasons.spring;
+export const currentSeason = seasons.winter;
 
 export const currentHours = currentSeason.hours;
 export const hoursLabel = `${currentSeason.name} Hours`;
