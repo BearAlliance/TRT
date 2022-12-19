@@ -2,61 +2,37 @@ import React, { lazy, Suspense } from 'react';
 import {
   Route,
   BrowserRouter as Router,
-  Switch,
-  Redirect,
+  Routes,
+  Navigate,
 } from 'react-router-dom';
 import './App.scss';
 import { Nav } from './nav/nav';
 import { Loading } from './loading/loading';
 import { Footer } from './footer/footer';
 
-function RouteWithSubRoutes(route) {
-  return (
-    <Route
-      path={route.path}
-      render={(props) => (
-        // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
-      )}
-    />
-  );
-}
+const Rental = lazy(() => import('./pages/rental/rental-page'));
+const Repair = lazy(() => import('./pages/repair/repair-page'));
+const Fit = lazy(() => import('./pages/fit/fit-page'));
+const NotFound = lazy(() => import('./pages/not-found/not-found'));
+const Home = lazy(() => import('./pages/home/home-page'));
 
 function App() {
-  const routes = [
-    {
-      path: '/rental',
-      component: lazy(() => import('./pages/rental/rental-page')),
-    },
-    {
-      path: '/repair',
-      component: lazy(() => import('./pages/repair/repair-page')),
-    },
-    {
-      path: '/fit',
-      component: lazy(() => import('./pages/fit/fit-page')),
-    },
-    {
-      path: '/not-found',
-      component: lazy(() => import('./pages/not-found/not-found')),
-    },
-    {
-      path: '/',
-      component: lazy(() => import('./pages/home/home-page')),
-    },
-  ];
-
   return (
     <Router>
       <Nav />
       <div className="page-content">
         <Suspense fallback={<Loading />}>
-          <Switch>
-            {routes.map((route, i) => (
-              <RouteWithSubRoutes key={i} {...route} />
-            ))}
-            <Route render={() => <Redirect to="/not-found" />} />
-          </Switch>
+          <Routes>
+            <Route path="/rental" element={<Rental />} />
+            <Route path="/repair" element={<Repair />} />
+            <Route path="/fit" element={<Fit />} />
+            <Route path="/not-found" element={<NotFound />} />
+            <Route path="/" element={<Home />} />
+            <Route
+              path="*"
+              render={() => <Navigate replace to="/not-found" />}
+            />
+          </Routes>
         </Suspense>
       </div>
       <Footer />
