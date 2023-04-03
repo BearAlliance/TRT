@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start:dev": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "npm run prettier:check && react-scripts test",
     "eject": "react-scripts eject",
@@ -28,21 +28,21 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/react": "^18.0.26",
+    "@types/react": "^18.0.32",
     "bulma": "^0.9.4",
     "classnames": "^2.3.2",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.31.11",
-    "husky": "^8.0.2",
-    "lint-staged": "^13.1.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "prettier": "2.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.5.0",
+    "react-router-dom": "^6.10.0",
     "react-scripts": "^5.0.1",
-    "sass": "^1.57.0"
+    "sass": "^1.60.0"
   },
   "lint-staged": {
     "*{js,jsx,json,md}": "prettier --write"
