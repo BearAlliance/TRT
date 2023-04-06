@@ -5,19 +5,16 @@ export default function RentalPage() {
   const rentals = [
     {
       type: 'Road',
-      notes: 'Trek Road',
       hourPrice: '25',
       dayPrice: '50',
     },
     {
-      type: 'Mountain',
-      notes: 'Trek Marlin (Call for availability)',
+      type: 'Mountain (Call for availability)',
       hourPrice: '20',
       dayPrice: '50',
     },
     {
       type: 'E-bike',
-      notes: '',
       hourPrice: '25',
       dayPrice: '75',
     },
@@ -45,16 +42,14 @@ export default function RentalPage() {
                   <th>Bike Type</th>
                   <th>Per Hour</th>
                   <th>Per Day</th>
-                  <th>Notes</th>
                 </tr>
               </thead>
               <tbody>
                 {rentals.map((rental, index) => (
-                  <tr key={rental}>
+                  <tr key={index}>
                     <td key={index}>{rental.type}</td>
                     <td key={index}>${rental.hourPrice}</td>
                     <td key={index}>${rental.dayPrice}</td>
-                    <td key={index}>{rental.notes}</td>
                   </tr>
                 ))}
               </tbody>
