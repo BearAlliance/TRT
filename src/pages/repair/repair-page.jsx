@@ -15,13 +15,13 @@ function LaborRates() {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Labor Rate</p>
-              <p className="title">$50/hr</p>
+              <p className="title">$69.99/hr</p>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Wheel True</p>
-              <p className="title">$25</p>
+              <p className="title">$30</p>
             </div>
           </div>
           <div className="level-item has-text-centered">
@@ -39,7 +39,7 @@ function LaborRates() {
 const repairPackages = [
   {
     title: 'Basic',
-    price: '$75',
+    price: '$89.99',
     services: [
       'Wash Bike',
       'Inspect for safety',
@@ -47,32 +47,7 @@ const repairPackages = [
       'Replace worn cables and pads',
       'True wheels, check wheel bearings',
       'Fresh Lube',
-    ],
-  },
-  {
-    title: 'Werx',
-    price: '$125',
-    services: [
-      'Wash Bike',
-      'Inspect for safety',
-      'Adjust shifting and breaking',
-      'Replace worn cables and pads',
-      'True wheels, check wheel bearings',
-      'Remove and degrease drive train',
-      'Fresh Lube',
-    ],
-  },
-  {
-    title: 'Overhaul',
-    price: '$175',
-    services: [
-      'Wash Bike,',
-      'Strip bike to frame',
-      'Clean all parts',
-      'Re-assemble with fresh grease',
-      'Adjust shifting and breaking',
-      'Replace worn cables and pads',
-      'True Both Wheels, rebuild or replace wheel bearings',
+      'Degrease drivetrain',
     ],
   },
 ];

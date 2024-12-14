@@ -89,15 +89,6 @@ export function Nav() {
         },
       ],
     },
-    {
-      label: 'Redline',
-      links: [
-        {
-          label: 'BMX',
-          url: 'https://redlinebicycles.com/',
-        },
-      ],
-    },
   ];
 
   const brands = [

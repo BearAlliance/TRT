@@ -20,7 +20,7 @@ export default function FitPage() {
     },
     {
       title: 'Road Fit',
-      price: 150,
+      price: 250,
       description:
         'Through an interview and physical evaluation, a Road Fit will determine a rider’s ideal:',
       includes: [
@@ -36,7 +36,7 @@ export default function FitPage() {
     },
     {
       title: 'Triathlon Fit',
-      price: 200,
+      price: 300,
       description:
         "Covers all elements included in Road Fit, plus a custom analysis of proper aerobar set up. The Tri Fit determines a rider's ideal:",
       includes: [
