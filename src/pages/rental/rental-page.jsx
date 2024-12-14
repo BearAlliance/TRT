@@ -9,11 +9,6 @@ export default function RentalPage() {
       dayPrice: '50',
     },
     {
-      type: 'Mountain (Call for availability)',
-      hourPrice: '20',
-      dayPrice: '50',
-    },
-    {
       type: 'E-bike',
       hourPrice: '25',
       dayPrice: '75',
