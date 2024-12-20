@@ -94,8 +94,6 @@ export const winterHours = [
   },
   {
     day: 'Thursday',
-    open: '11:00AM',
-    close: '5:00PM',
   },
   {
     day: 'Friday',
