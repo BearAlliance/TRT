@@ -1,50 +1,48 @@
 {
-  "name": "trt-react",
+  "name": "trt-bicycles",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "npm run prettier:check && react-scripts test",
-    "eject": "react-scripts eject",
-    "prettier:check": "prettier --check --ignore-path .gitignore .",
-    "prettier:write": "prettier --write --ignore-path .gitignore .",
-    "prepare": "husky install"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "npm run lint && npm run prettier:check && npm run test:unit",
+    "test:unit": "jest",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/react": "^18.0.32",
-    "bulma": "^0.9.4",
-    "classnames": "^2.3.2",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-react": "^7.32.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
-    "prettier": "2.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0",
-    "react-scripts": "^5.0.1",
-    "sass": "^1.60.0"
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@headlessui/react": "^2.2.0",
+    "@headlessui/tailwindcss": "^0.2.1",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/forms": "^0.5.9",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "clsx": "^2.1.1",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.1.2",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "next": "^15.1.2",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "0.33.5",
+    "tailwindcss": "^3.4.17",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2"
   },
+  "browserslist": "defaults, not ie <= 11",
   "lint-staged": {
-    "*{js,jsx,json,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx}": "npm run lint -- --fix --file",
+    "*.{js,jsx,ts,tsx,json,md}": "prettier --write"
   }
 }
