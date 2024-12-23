@@ -138,7 +138,7 @@ export function Header() {
             </Link>
             <Link
               href="/"
-              className="inline-block rounded-lg px-2 py-1 text-lg hover:bg-slate-100 hover:text-slate-700"
+              className="inline-block rounded-lg px-2 py-1 text-base hover:bg-slate-100 hover:text-slate-700 sm:text-lg"
             >
               TRT Bicycles
             </Link>

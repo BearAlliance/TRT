@@ -77,7 +77,7 @@ export default function Packages() {
               </dl>
             </div>
           </div>
-          <div className="flex items-start justify-end lg:order-first">
+          <div className="hidden items-start justify-end lg:order-first lg:flex">
             <Image
               alt="A mechanic working on a bike."
               src={repairPic}
