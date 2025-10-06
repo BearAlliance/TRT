@@ -54,7 +54,7 @@ function ScheduleButton() {
   return (
     <Link
       href="/contact"
-      className="mt-8 block rounded-md bg-orange-500 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700"
+      className="mt-8 block rounded-md bg-orange-500 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-orange-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 focus-visible:outline-solid"
     >
       Call to schedule
     </Link>
@@ -64,22 +64,22 @@ function ScheduleButton() {
 export default function FitPage() {
   return (
     <div className="isolate bg-gray-900">
-      <div className="mx-auto max-w-7xl pb-96 pt-24 text-center sm:pt-32 lg:px-8">
+      <div className="mx-auto max-w-7xl pt-24 pb-96 text-center sm:pt-32 lg:px-8">
         <div className="mx-auto">
           <h2 className="text-base/7 font-semibold text-orange-500">
             Trek Precision Fit
           </h2>
-          <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+          <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">
             Comfortable to the last mile
           </p>
         </div>
         <div className="relative mt-6">
-          <p className="mx-auto max-w-2xl text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
+          <p className="mx-auto max-w-2xl text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
             {description}
           </p>
           <svg
             viewBox="0 0 1208 1024"
-            className="absolute left-1/2 -z-10 h-[64rem] w-screen -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-12 xl:top-0"
+            className="absolute left-1/2 -z-10 h-256 w-screen -translate-x-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-12 xl:top-0"
           >
             <ellipse
               cx={604}
