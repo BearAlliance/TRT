@@ -32,7 +32,7 @@ function Plan({
           ) : null}
         </div>
         <div className="text-left">
-          <p className="mt-5 font-display text-lg text-white">
+          <p className="font-display mt-5 text-lg text-white">
             ${hourPrice}/hr
           </p>
           <p className="font-display text-lg text-white">${dayPrice}/day</p>
@@ -61,7 +61,7 @@ function Plan({
       <div className="col-end">
         <Link
           href="/contact"
-          className="mt-12 block rounded-md bg-orange-500 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700"
+          className="mt-12 block rounded-md bg-orange-500 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-orange-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 focus-visible:outline-solid"
         >
           Call to reserve
         </Link>

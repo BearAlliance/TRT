@@ -75,18 +75,18 @@ function MobileNavigation() {
   return (
     <Popover>
       <PopoverButton
-        className="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none"
+        className="ui-not-focus-visible:outline-hidden relative z-10 flex h-8 w-8 items-center justify-center"
         aria-label="Toggle Navigation"
       >
         {({ open }) => <MobileNavIcon open={open} />}
       </PopoverButton>
       <PopoverBackdrop
         transition
-        className="fixed inset-0 bg-slate-300/50 duration-150 data-[closed]:opacity-0 data-[enter]:ease-out data-[leave]:ease-in"
+        className="fixed inset-0 bg-slate-300/50 duration-150 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in"
       />
       <PopoverPanel
         transition
-        className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-150 data-[leave]:duration-100 data-[enter]:ease-out data-[leave]:ease-in"
+        className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
       >
         {[...mainNavLinks, ...rightSideNavLinks].map((link) => (
           <MobileNavLink key={link.name} href={link.href}>
@@ -97,14 +97,14 @@ function MobileNavigation() {
         <hr className="m-2 border-slate-300/40" />
 
         <Disclosure as="div" className="">
-          <DisclosureButton className="tracking-light group -m-1 flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-lg font-medium text-slate-900 hover:bg-gray-50">
+          <DisclosureButton className="tracking-light group -m-1 flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-lg font-medium text-slate-900 hover:bg-gray-50">
             Brands
             <ChevronDownIcon
               aria-hidden="true"
-              className="size-5 flex-none group-data-[open]:rotate-180"
+              className="size-5 flex-none group-data-open:rotate-180"
             />
           </DisclosureButton>
-          <DisclosurePanel className="ml-1 mt-2 space-y-1">
+          <DisclosurePanel className="mt-2 ml-1 space-y-1">
             {[...bikeLinks, ...brandLinks].map((item) => (
               <div key={item.label}>
                 <div className="font-light text-orange-600">{item.label}</div>
@@ -112,7 +112,7 @@ function MobileNavigation() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="block rounded-lg py-0 pl-6 pr-3 text-sm/7 font-medium text-gray-900 hover:bg-gray-50"
+                    className="block rounded-lg py-0 pr-3 pl-6 text-sm/7 font-medium text-gray-900 hover:bg-gray-50"
                   >
                     {link.label}
                     <ArrowTopRightOnSquareIcon className="ml-1 inline-block h-4 w-4" />
