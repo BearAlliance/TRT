@@ -25,10 +25,10 @@ export default function FrequentlyAskedQuestions() {
       <div className="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
-            <h2 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
               Frequently asked questions
             </h2>
-            <p className="mt-4 text-pretty text-base/7 text-gray-600">
+            <p className="mt-4 text-base/7 text-pretty text-gray-600">
               Can’t find the answer you’re looking for?{' '}
               <Link
                 href="/contact"

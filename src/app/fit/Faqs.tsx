@@ -41,7 +41,7 @@ export function FitFaqs() {
       className="relative overflow-hidden bg-slate-50 py-20 sm:py-32"
     >
       <Image
-        className="absolute left-1/2 top-0 max-w-none -translate-y-1/4 translate-x-[-30%]"
+        className="absolute top-0 left-1/2 max-w-none translate-x-[-30%] -translate-y-1/4"
         src={backgroundImage}
         alt=""
         width={1558}
@@ -76,7 +76,7 @@ export function FitFaqs() {
               <ul role="list" className="flex flex-col gap-y-8">
                 {column.map((faq, faqIndex) => (
                   <li key={faqIndex}>
-                    <h3 className="text-lg font-semibold leading-7 text-slate-900">
+                    <h3 className="text-lg leading-7 font-semibold text-slate-900">
                       {faq.question}
                     </h3>
                     <p className="mt-4 text-sm text-slate-700">{faq.answer}</p>
