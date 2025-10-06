@@ -6,8 +6,8 @@ export function Hero() {
   return (
     <>
       <div className="from-50%% bg-linear-to-r from-gray-200 via-gray-200 via-50% to-gray-300">
-        <Container className="pb-8 pt-20 text-center lg:pt-24">
-          <h1 className="font-display xs:text-3xl mx-auto max-w-md font-display text-3xl font-medium tracking-tight text-slate-900 sm:max-w-4xl sm:text-5xl md:text-7xl">
+        <Container className="pt-20 pb-8 text-center lg:pt-24">
+          <h1 className="font-display xs:text-3xl font-display mx-auto max-w-md text-3xl font-medium tracking-tight text-slate-900 sm:max-w-4xl sm:text-5xl md:text-7xl">
             Family owned{' '}
             <span className="relative whitespace-nowrap text-orange-600">
               <svg
