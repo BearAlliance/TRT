@@ -23,7 +23,7 @@ export default function HoursSection() {
                 <tr>
                   <th
                     scope="col"
-                    className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                    className="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-gray-900 sm:pl-0"
                   >
                     Day
                   </th>
@@ -38,10 +38,10 @@ export default function HoursSection() {
               <tbody className="divide-y divide-gray-200">
                 {getHoursBySeason().map((day) => (
                   <tr key={day.day}>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                    <td className="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-gray-900 sm:pl-0">
                       {day.day}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    <td className="px-3 py-4 text-sm whitespace-nowrap text-gray-500">
                       {day.open && `${day.open} - ${day.close}`}
                       {!day.open && 'Closed'}
                     </td>

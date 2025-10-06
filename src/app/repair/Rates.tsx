@@ -8,7 +8,7 @@ const services = [
 export function Rates() {
   return (
     <div>
-      <h1 className="font-face-stingray mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+      <h1 className="font-face-stingray mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
         Shop Rates
       </h1>
       <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">

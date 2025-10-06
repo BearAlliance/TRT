@@ -15,7 +15,7 @@ export default function RepairPage() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
-            <h2 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
               {HEADING}
             </h2>
             <p className="mt-4 text-lg/8 text-gray-600">{SUBHEADING}</p>

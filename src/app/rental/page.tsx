@@ -24,7 +24,7 @@ export default function RentalPage() {
       >
         <Container>
           <div className="md:text-center">
-            <h2 className="text-balance text-5xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
               {heading}
             </h2>
             <p className="mt-4 text-lg text-slate-400">{subheading}</p>

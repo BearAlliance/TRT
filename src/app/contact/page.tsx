@@ -14,7 +14,7 @@ export default function ContactPage() {
       <div className="py-10">
         <header>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
               Contact
             </h1>
             <p className="mt-4 text-lg/8 text-gray-600">
