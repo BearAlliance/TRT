@@ -44,7 +44,7 @@
   },
   "browserslist": "defaults, not ie <= 11",
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "npm run lint -- --fix --file",
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{js,jsx,ts,tsx,json,md}": "prettier --write"
   },
   "dependencies": {
