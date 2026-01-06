@@ -1,5 +1,9 @@
+const foundingYear = 2008
 const stats = [
-  { name: 'Years in business', value: '17' },
+  {
+    name: 'Years in business',
+    value: `${new Date().getFullYear() - foundingYear}`,
+  },
   { name: 'Ridden by our employees annually', value: '25,000km' },
   { name: 'Bicycles serviced every season', value: '2,000+' },
 ]
