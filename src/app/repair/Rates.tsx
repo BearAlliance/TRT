@@ -1,6 +1,6 @@
 const services = [
   { name: 'Flat Fix', value: '$7 + Tube' },
-  { name: 'Labor Rate', value: '$69.99/hr' },
+  { name: 'Labor Rate', value: '$75/hr' },
   { name: 'Wheel True', value: '$30' },
   { name: '24 Hour Rush', value: '$25' },
 ]
