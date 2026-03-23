@@ -1,4 +1,4 @@
-import { getHoursBySeason } from '@/app/contact/hours'
+import { getHours } from '@/app/contact/hours'
 
 export default function HoursSection() {
   return (
@@ -36,7 +36,7 @@ export default function HoursSection() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {getHoursBySeason().map((day) => (
+                {getHours().map((day) => (
                   <tr key={day.day}>
                     <td className="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-gray-900 sm:pl-0">
                       {day.day}
