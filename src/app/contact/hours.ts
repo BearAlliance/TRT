@@ -130,3 +130,7 @@ export function getHoursBySeason() {
 
   return summerHours
 }
+
+export function getHours() {
+  return summerHours
+}
