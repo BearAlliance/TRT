@@ -14,31 +14,31 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
-    "@fortawesome/fontawesome-svg-core": "^7.1.0",
-    "@fortawesome/free-brands-svg-icons": "^7.1.0",
-    "@fortawesome/react-fontawesome": "^3.1.1",
+    "@eslint/js": "^9.39.4",
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.3.0",
     "@headlessui/react": "^2.2.9",
     "@headlessui/tailwindcss": "^0.2.2",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^24.10.4",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "autoprefixer": "^10.4.23",
+    "autoprefixer": "^10.4.27",
     "clsx": "^2.1.1",
-    "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.1",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.1",
     "husky": "^9.1.7",
-    "jest": "^30.2.0",
-    "next": "^16.1.5",
-    "prettier": "^3.7.4",
+    "jest": "^30.3.0",
+    "next": "^16.2.1",
+    "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "sharp": "0.34.5",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.2",
     "ts-jest": "^29.4.6",
     "typescript": "^5.9.3"
   },
@@ -46,8 +46,5 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{js,jsx,ts,tsx,json,md}": "prettier --write"
-  },
-  "dependencies": {
-    "@eslint/js": "^9.39.2"
   }
 }
