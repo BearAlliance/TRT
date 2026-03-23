@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={clsx(
         'h-full scroll-smooth bg-white antialiased',
         inter.variable,
