@@ -10,6 +10,7 @@ function Plan({
   description,
   features,
   featured = false,
+  bookingFlow,
 }: {
   name: string
   hourPrice: string
@@ -17,6 +18,7 @@ function Plan({
   description: string
   features: Array<string>
   featured?: boolean
+  bookingFlow: string
 }) {
   return (
     <section className="mx-6 flex max-w-sm flex-col justify-between rounded-3xl p-4 px-6 ring-2 ring-orange-400 sm:px-8 md:min-h-52">
@@ -60,10 +62,10 @@ function Plan({
       </div>
       <div className="col-end">
         <Link
-          href="/contact"
+          href={`https://fareharbor.com/embeds/book/trtbicycles/?ref=website&full-items&bookable-only=yes&flow=${bookingFlow}`}
           className="mt-12 block rounded-md bg-orange-500 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-orange-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 focus-visible:outline-solid"
         >
-          Call to reserve
+          Book now
         </Link>
       </div>
     </section>
@@ -85,6 +87,7 @@ export function Pricing() {
           'Serviced after every ride',
           'Complimentary saddle adjustment',
         ]}
+        bookingFlow="599057"
       />
       <Plan
         featured
@@ -100,6 +103,7 @@ export function Pricing() {
           'Serviced after every ride',
           'Complimentary saddle adjustment',
         ]}
+        bookingFlow="1599058"
       />
     </div>
   )
