@@ -1,3 +1,4 @@
+import { FareHarborLightframe } from '@/app/rental/fair-harbor'
 import { Pricing } from '@/app/rental/Pricing'
 import { Container } from '@/components/Container'
 import FrequentlyAskedQuestions from '@/app/rental/FrequentlyAskedQuestions'
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function RentalPage() {
   return (
     <>
+      <FareHarborLightframe />
       <section
         id="pricing"
         aria-label="Pricing"
