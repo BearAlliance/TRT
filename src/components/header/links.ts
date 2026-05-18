@@ -97,4 +97,25 @@ export const bikeLinks: Brand[] = [
       },
     ],
   },
+  {
+    label: 'X-LAB',
+    links: [
+      {
+        label: 'Road',
+        href: 'https://xds.co/collections/all?filter.p.product_type=Road+Bikes',
+      },
+      {
+        label: 'Gravel',
+        href: 'https://xds.co/collections/all?filter.p.product_type=Gravel+Bikes',
+      },
+      {
+        label: 'City',
+        href: 'https://xds.co/collections/all?filter.p.product_type=City+Bikes',
+      },
+      {
+        label: 'Electric',
+        href: 'https://xds.co/collections/all?filter.p.product_type=Electric+Bikes',
+      },
+    ],
+  },
 ]
