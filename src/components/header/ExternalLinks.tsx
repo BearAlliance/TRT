@@ -9,7 +9,13 @@ export type Brand = {
   }[]
 }
 
-export function ExternalLinks({ links }: { links: Brand[] }) {
+export function ExternalLinks({
+  links,
+  onNavigate,
+}: {
+  links: Brand[]
+  onNavigate?: () => void
+}) {
   return links.map((item) => (
     <div key={item.label}>
       <div className="font-medium text-orange-600">{item.label}</div>
@@ -20,6 +26,7 @@ export function ExternalLinks({ links }: { links: Brand[] }) {
             rel="noopener noreferrer"
             target="_blank"
             className="p block px-2 py-0.5 font-medium hover:text-blue-700"
+            onClick={onNavigate}
           >
             {link.label}
             <ArrowTopRightOnSquareIcon
