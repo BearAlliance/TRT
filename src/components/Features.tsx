@@ -8,6 +8,7 @@ import { Container } from '@/components/Container'
 import fitImage from '@/images/precision-fit.jpg'
 import rentalImage from '@/images/rosendale.jpg'
 import repairImage from '@/images/bike-parts.jpg'
+import gt8Image from '@/images/gt8-black-side-large.jpeg'
 import {
   MagnifyingGlassIcon,
   PaperAirplaneIcon,
@@ -189,11 +190,22 @@ export function Features() {
     >
       <Container>
         <div className="bg-white px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl md:text-4xl">
-              Everything you need for your ride
-            </h1>
-            <p className="mt-6 text-xl/8">{aboutUs}</p>
+          <div className="mx-auto grid max-w-6xl items-center gap-10 text-base/7 text-gray-700 lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-16">
+            <div className="max-w-3xl">
+              <h1 className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl md:text-4xl">
+                Everything you need for your ride
+              </h1>
+              <p className="mt-6 text-xl/8">{aboutUs}</p>
+            </div>
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+              <div className="overflow-hidden rounded-[1.75rem] bg-white p-3 shadow-xl ring-1 ring-slate-900/10">
+                <Image
+                  src={gt8Image}
+                  alt="GT8 bicycle side profile."
+                  className="h-auto w-full rounded-[1.25rem] object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
