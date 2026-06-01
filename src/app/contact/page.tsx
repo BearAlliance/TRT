@@ -5,7 +5,18 @@ import ContactMethods from '@/app/contact/ContactMethods'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact TRT Bicycles',
+  description:
+    'Call, email, or visit TRT Bicycles at 1066 NY-32 in Rosendale, NY. Find current shop hours, directions, and contact information.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact TRT Bicycles in Rosendale, NY',
+    description:
+      'Find TRT Bicycles hours, directions, phone number, email, and address in Rosendale, NY.',
+    url: '/contact',
+  },
 }
 
 export default function ContactPage() {

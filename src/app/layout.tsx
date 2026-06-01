@@ -5,13 +5,47 @@ import clsx from 'clsx'
 import '@/styles/tailwind.css'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/Footer'
+import {
+  DEFAULT_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  localBusinessJsonLd,
+} from '@/app/seo'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    template: 'TRT Bicycles - %s',
-    default: 'TRT Bicycles',
+    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME} | Bike Shop in Rosendale, NY`,
   },
-  description: 'Your favorite local bike shop in Rosendale NY.',
+  description: DEFAULT_DESCRIPTION,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: `${SITE_NAME} | Bike Shop in Rosendale, NY`,
+    description: DEFAULT_DESCRIPTION,
+    url: '/',
+    siteName: SITE_NAME,
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: `${SITE_NAME} | Bike Shop in Rosendale, NY`,
+    description: DEFAULT_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
 }
 
 const inter = Inter({
@@ -42,6 +76,12 @@ export default function RootLayout({
       )}
     >
       <body className="flex h-full flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
         <Header />
         {children}
         <Footer />
