@@ -185,16 +185,16 @@ export function Features() {
   return (
     <section
       id="features"
-      aria-label="Features for simplifying everyday business tasks"
+      aria-label="Bike shop services"
       className="pt-20 pb-14 sm:pt-32 sm:pb-20 lg:pb-32"
     >
       <Container>
         <div className="bg-white px-6 lg:px-8">
           <div className="mx-auto grid max-w-6xl items-center gap-10 text-base/7 text-gray-700 lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-16">
             <div className="max-w-3xl">
-              <h1 className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl md:text-4xl">
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl md:text-4xl">
                 Everything you need for your ride
-              </h1>
+              </h2>
               <p className="mt-6 text-xl/8">{aboutUs}</p>
             </div>
             <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">

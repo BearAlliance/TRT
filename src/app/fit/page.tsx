@@ -4,7 +4,18 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fit',
+  title: 'Professional Bike Fit in Rosendale, NY',
+  description:
+    'Book a Trek Precision Fit at TRT Bicycles in Rosendale, NY. Road fit, triathlon fit, cleat adjustment, and saddle positioning for more comfortable, efficient riding.',
+  alternates: {
+    canonical: '/fit',
+  },
+  openGraph: {
+    title: 'Professional Bike Fit in Rosendale, NY | TRT Bicycles',
+    description:
+      'Trek Precision Fit services for road, triathlon, cleat, and saddle adjustments at TRT Bicycles in Rosendale, NY.',
+    url: '/fit',
+  },
 }
 
 const tiers = [
@@ -66,12 +77,12 @@ export default function FitPage() {
     <div className="isolate bg-gray-900">
       <div className="mx-auto max-w-7xl pt-24 pb-96 text-center sm:pt-32 lg:px-8">
         <div className="mx-auto">
-          <h2 className="text-base/7 font-semibold text-orange-500">
+          <p className="text-base/7 font-semibold text-orange-500">
             Trek Precision Fit
-          </h2>
-          <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">
-            Comfortable to the last mile
           </p>
+          <h1 className="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">
+            Comfortable to the last mile
+          </h1>
         </div>
         <div className="relative mt-6">
           <p className="mx-auto max-w-2xl text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
