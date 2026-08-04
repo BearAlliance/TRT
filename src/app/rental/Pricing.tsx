@@ -63,9 +63,9 @@ function Plan({
       <div className="col-end">
         <Link
           href={`https://fareharbor.com/embeds/book/trtbicycles/?ref=website&full-items&bookable-only=yes&flow=${bookingFlow}`}
-          className="mt-12 block rounded-md bg-orange-500 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-orange-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 focus-visible:outline-solid"
+          className="booking-button mt-12 block rounded-md bg-orange-500 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-orange-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 focus-visible:outline-solid"
         >
-          Book now
+          <span>Book now</span>
         </Link>
       </div>
     </section>

@@ -66,3 +66,46 @@
 .font-face-stingray {
   font-family: 'stingray', sans-serif;
 }
+
+@keyframes booking-button-light-sweep {
+  0%,
+  55% {
+    transform: translateX(-175%) skewX(-20deg);
+  }
+
+  100% {
+    transform: translateX(225%) skewX(-20deg);
+  }
+}
+
+.booking-button {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.booking-button::after {
+  animation: booking-button-light-sweep 3.5s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 45%),
+    transparent
+  );
+  content: '';
+  inset: -50% auto -50% 0;
+  pointer-events: none;
+  position: absolute;
+  width: 34%;
+}
+
+.booking-button > span {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-button::after {
+    animation: none;
+  }
+}
