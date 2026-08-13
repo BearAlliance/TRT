@@ -52,6 +52,7 @@ describe('inventory CMS API', () => {
   it('requires login, then creates, lists, and deletes an inventory item', async () => {
     const app = await createCmsApp({
       allowedOrigins: ['http://localhost:3000'],
+      cookieSameSite: 'none',
       dataDir,
       publicApiUrl: 'http://localhost:4000',
       secureCookies: false,
@@ -78,6 +79,7 @@ describe('inventory CMS API', () => {
       Array.isArray(setCookie) ? setCookie[0] : setCookie
     )?.split(';')[0]
     expect(sessionCookie).toBeTruthy()
+    expect(login.headers['set-cookie']).toContain('SameSite=None')
 
     const image = await sharp({
       create: { background: '#123456', channels: 3, height: 40, width: 40 },

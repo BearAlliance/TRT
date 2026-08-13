@@ -161,7 +161,7 @@ export function createCmsHandlers({
         httpOnly: true,
         maxAge: SESSION_DURATION_MS / 1000,
         path: '/',
-        sameSite: 'lax',
+        sameSite: config.cookieSameSite,
         secure: config.secureCookies,
       })
       return { ok: true }

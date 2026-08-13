@@ -38,6 +38,10 @@ then set the prompted `CMS_PASSWORD_HASH` secret during the first Blueprint
 apply. Disk-backed deploys briefly interrupt the CMS API and cannot scale to
 multiple instances.
 
+For a staging static site and API using separate `onrender.com` hostnames, set
+`CMS_COOKIE_SAME_SITE=none` on the staging CMS. The production
+`trtbicycles.com` and `cms.trtbicycles.com` domains use the default `lax` value.
+
 ## Customizing
 
 Modify files in the `/src` folder.

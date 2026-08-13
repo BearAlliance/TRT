@@ -7,6 +7,10 @@ export function configFromEnvironment(): CmsConfig {
     if (!value) throw new Error(`${key} must be configured.`)
     return value
   }
+  const cookieSameSite = process.env.CMS_COOKIE_SAME_SITE ?? 'lax'
+  if (!['lax', 'none', 'strict'].includes(cookieSameSite)) {
+    throw new Error('CMS_COOKIE_SAME_SITE must be lax, none, or strict.')
+  }
 
   return {
     allowedOrigins: (process.env.CMS_ALLOWED_ORIGINS ?? 'http://localhost:3000')
@@ -14,6 +18,7 @@ export function configFromEnvironment(): CmsConfig {
       .map((origin) => origin.trim())
       .filter(Boolean),
     cookieDomain: process.env.CMS_COOKIE_DOMAIN,
+    cookieSameSite: cookieSameSite as CmsConfig['cookieSameSite'],
     dataDir: process.env.DATA_DIR ?? path.join(process.cwd(), '.data'),
     passwordHash: required('CMS_PASSWORD_HASH'),
     publicApiUrl: process.env.PUBLIC_API_URL?.replace(/\/$/, ''),

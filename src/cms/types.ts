@@ -1,6 +1,7 @@
 export type CmsConfig = {
   allowedOrigins: string[]
   cookieDomain?: string
+  cookieSameSite: 'lax' | 'none' | 'strict'
   dataDir: string
   passwordHash: string
   publicApiUrl?: string
