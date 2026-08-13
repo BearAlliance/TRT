@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: trt-bicycles
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: build
+    domains:
+      - trtbicycles.com
+      - www.trtbicycles.com
+    envVars:
+      - key: NEXT_PUBLIC_CMS_API_URL
+        value: https://cms.trtbicycles.com
+
+  - type: web
+    name: trt-inventory-cms
+    runtime: node
+    plan: starter
+    buildCommand: npm ci
+    startCommand: npm run cms:start
+    healthCheckPath: /health
+    domains:
+      - cms.trtbicycles.com
+    disk:
+      name: inventory-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+      - key: PUBLIC_API_URL
+        value: https://cms.trtbicycles.com
+      - key: CMS_ALLOWED_ORIGINS
+        value: https://trtbicycles.com,https://www.trtbicycles.com
+      - key: CMS_COOKIE_DOMAIN
+        value: .trtbicycles.com
+      - key: CMS_USERNAME
+        value: inventory-admin
+      - key: CMS_PASSWORD_HASH
+        sync: false
+      - key: CMS_SESSION_SECRET
+        generateValue: true

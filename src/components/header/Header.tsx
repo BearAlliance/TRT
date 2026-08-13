@@ -23,6 +23,7 @@ import {
 } from '@heroicons/react/24/solid'
 
 const mainNavLinks = [
+  { name: 'Inventory', href: '/inventory' },
   { name: 'Rental', href: '/rental' },
   { name: 'Repair', href: '/repair' },
   { name: 'Fit', href: '/fit' },
@@ -148,7 +149,6 @@ export function Header() {
                   {link.name}
                 </NavLink>
               ))}
-              <ExternalLinkNavItem label="Bikes" links={bikeLinks} />
               <ExternalLinkNavItem label="Brands" links={brandLinks} />
             </div>
           </div>

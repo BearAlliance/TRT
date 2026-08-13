@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently --kill-others \"npm run site:dev\" \"npm run cms:dev\"",
     "build": "next build",
     "start": "next start",
+    "site:dev": "next dev --turbopack",
+    "cms:dev": "tsx watch --env-file=.env.local src/cms/server.ts",
+    "cms:start": "tsx src/cms/server.ts",
+    "cms:hash-password": "tsx src/cms/hash-password.ts",
     "lint": "eslint .",
     "test": "npm run lint && npm run prettier:check && npm run test:unit",
-    "test:unit": "jest",
+    "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "prepare": "husky"
@@ -23,11 +27,13 @@
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/postcss": "^4.3.3",
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "autoprefixer": "^10.5.4",
     "clsx": "^2.1.1",
+    "concurrently": "^10.0.4",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.0",
     "husky": "^9.1.7",
@@ -46,5 +52,15 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{js,jsx,ts,tsx,json,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.1.2",
+    "@fastify/cors": "^11.3.0",
+    "@fastify/multipart": "^10.1.0",
+    "@fastify/rate-limit": "^11.2.0",
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^17.4.2",
+    "fastify": "^5.11.3",
+    "tsx": "^4.23.12"
   }
 }
