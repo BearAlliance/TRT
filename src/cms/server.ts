@@ -35,6 +35,7 @@ type InventoryItemRow = {
   description: string
   id: string
   image_filename: string
+  position: number
   title: string
   updated_at: number
 }
@@ -140,6 +141,7 @@ export async function createCmsApp(
       title TEXT NOT NULL,
       description TEXT NOT NULL,
       image_filename TEXT NOT NULL,
+      position INTEGER NOT NULL DEFAULT 0,
       created_at INTEGER NOT NULL,
       updated_at INTEGER NOT NULL
     );
@@ -148,6 +150,15 @@ export async function createCmsApp(
       expires_at INTEGER NOT NULL
     );
   `)
+  const itemColumns = db
+    .prepare('PRAGMA table_info(inventory_items)')
+    .all() as { name: string }[]
+  if (!itemColumns.some((column) => column.name === 'position')) {
+    db.exec(
+      'ALTER TABLE inventory_items ADD COLUMN position INTEGER NOT NULL DEFAULT 0',
+    )
+  }
+  db.exec('UPDATE inventory_items SET position = rowid WHERE position = 0')
 
   const app = Fastify({ logger: true })
   await app.register(cookie, { secret: config.sessionSecret })
@@ -240,7 +251,9 @@ export async function createCmsApp(
   app.get('/health', async () => ({ ok: true }))
   app.get('/v1/inventory', async (request) => {
     const rows = db
-      .prepare('SELECT * FROM inventory_items ORDER BY created_at DESC')
+      .prepare(
+        'SELECT * FROM inventory_items ORDER BY position ASC, created_at DESC',
+      )
       .all() as InventoryItemRow[]
     return { items: rows.map((row) => itemResponse(row, request)) }
   })
@@ -305,7 +318,9 @@ export async function createCmsApp(
     { preHandler: authenticate },
     async (request) => {
       const rows = db
-        .prepare('SELECT * FROM inventory_items ORDER BY created_at DESC')
+        .prepare(
+          'SELECT * FROM inventory_items ORDER BY position ASC, created_at DESC',
+        )
         .all() as InventoryItemRow[]
       return { items: rows.map((row) => itemResponse(row, request)) }
     },
@@ -320,9 +335,16 @@ export async function createCmsApp(
       const imageFilename = await saveImage(fields.image)
       const id = randomUUID()
       const now = Date.now()
+      const position = (
+        db
+          .prepare(
+            'SELECT COALESCE(MAX(position), 0) + 1 AS position FROM inventory_items',
+          )
+          .get() as { position: number }
+      ).position
       db.prepare(
-        'INSERT INTO inventory_items (id, title, description, image_filename, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)',
-      ).run(id, title, description, imageFilename, now, now)
+        'INSERT INTO inventory_items (id, title, description, image_filename, position, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      ).run(id, title, description, imageFilename, position, now, now)
       const item = db
         .prepare('SELECT * FROM inventory_items WHERE id = ?')
         .get(id) as InventoryItemRow
@@ -355,6 +377,40 @@ export async function createCmsApp(
         .prepare('SELECT * FROM inventory_items WHERE id = ?')
         .get(id) as InventoryItemRow
       return { item: itemResponse(item, request) }
+    },
+  )
+  app.post(
+    '/v1/admin/inventory/order',
+    { preHandler: [authenticate, requireAllowedOrigin] },
+    async (request, reply) => {
+      const body = request.body as { ids?: unknown }
+      if (
+        !Array.isArray(body?.ids) ||
+        !body.ids.every((id) => typeof id === 'string')
+      ) {
+        throw inputError('Inventory order must include item IDs.')
+      }
+      const ids = body.ids as string[]
+      const storedIds = (
+        db.prepare('SELECT id FROM inventory_items').all() as { id: string }[]
+      ).map((item) => item.id)
+      if (
+        ids.length !== storedIds.length ||
+        new Set(ids).size !== ids.length ||
+        ids.some((id) => !storedIds.includes(id))
+      ) {
+        return reply
+          .code(400)
+          .send({ error: 'Inventory items changed. Refresh and try again.' })
+      }
+      const updatePositions = db.transaction((orderedIds: string[]) => {
+        const update = db.prepare(
+          'UPDATE inventory_items SET position = ? WHERE id = ?',
+        )
+        orderedIds.forEach((id, index) => update.run(index + 1, id))
+      })
+      updatePositions(ids)
+      return { ok: true }
     },
   )
   app.delete(

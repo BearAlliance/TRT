@@ -127,6 +127,14 @@ describe('inventory CMS API', () => {
       item: expect.objectContaining({ title: 'Updated demo bike' }),
     })
 
+    const reordered = await app.inject({
+      headers: { ...headers, cookie: sessionCookie },
+      method: 'POST',
+      payload: { ids: [item.id] },
+      url: '/v1/admin/inventory/order',
+    })
+    expect(reordered.statusCode).toBe(200)
+
     const removed = await app.inject({
       headers: { ...headers, cookie: sessionCookie },
       method: 'DELETE',

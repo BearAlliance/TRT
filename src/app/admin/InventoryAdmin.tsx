@@ -113,6 +113,35 @@ export function InventoryAdmin() {
     await loadItems()
   }
 
+  const moveItem = async (item: InventoryItem, direction: -1 | 1) => {
+    const index = items.findIndex(({ id }) => id === item.id)
+    const target = index + direction
+    if (target < 0 || target >= items.length) return
+    const orderedItems = [...items]
+    ;[orderedItems[index], orderedItems[target]] = [
+      orderedItems[target],
+      orderedItems[index],
+    ]
+    setItems(orderedItems)
+    setMessage(null)
+    try {
+      const response = await fetch(`${cmsApiUrl}/v1/admin/inventory/order`, {
+        body: JSON.stringify({ ids: orderedItems.map(({ id }) => id) }),
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+      })
+      if (!response.ok) throw new Error(await responseMessage(response))
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : 'Unable to update the item order.',
+      )
+      await loadItems()
+    }
+  }
+
   const logout = async () => {
     await fetch(`${cmsApiUrl}/v1/auth/logout`, {
       credentials: 'include',
@@ -282,7 +311,7 @@ export function InventoryAdmin() {
         </form>
       )}
       <div className="mt-8 grid gap-5 md:grid-cols-2">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <article
             key={item.id}
             className="overflow-hidden rounded-2xl bg-white shadow-sm"
@@ -300,6 +329,22 @@ export function InventoryAdmin() {
                 {item.description}
               </p>
               <div className="mt-5 flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => void moveItem(item, -1)}
+                  disabled={index === 0}
+                  className="rounded-full px-3 py-1.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Move up
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void moveItem(item, 1)}
+                  disabled={index === items.length - 1}
+                  className="rounded-full px-3 py-1.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Move down
+                </button>
                 <button
                   onClick={() =>
                     setEditor({
