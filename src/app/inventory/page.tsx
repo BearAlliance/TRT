@@ -30,7 +30,7 @@ export default function InventoryPage() {
             Our Inventory
           </h1>
           <p className="mt-4 text-lg text-slate-400">
-            Take a look at the bikes and gear we typically have in stock.
+            Bikes and gear we typically stock.
           </p>
         </div>
         <div className="mt-12">

@@ -23,10 +23,10 @@ import {
 } from '@heroicons/react/24/solid'
 
 const mainNavLinks = [
-  { name: 'Inventory', href: '/inventory' },
   { name: 'Rental', href: '/rental' },
   { name: 'Repair', href: '/repair' },
   { name: 'Fit', href: '/fit' },
+  { name: 'Inventory', href: '/inventory' },
 ]
 
 const rightSideNavLinks = [{ name: 'Contact', href: '/contact' }]
