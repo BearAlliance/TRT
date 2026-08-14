@@ -26,6 +26,7 @@ const mainNavLinks = [
   { name: 'Rental', href: '/rental' },
   { name: 'Repair', href: '/repair' },
   { name: 'Fit', href: '/fit' },
+  { name: 'Inventory', href: '/inventory' },
 ]
 
 const rightSideNavLinks = [{ name: 'Contact', href: '/contact' }]
@@ -148,7 +149,6 @@ export function Header() {
                   {link.name}
                 </NavLink>
               ))}
-              <ExternalLinkNavItem label="Bikes" links={bikeLinks} />
               <ExternalLinkNavItem label="Brands" links={brandLinks} />
             </div>
           </div>

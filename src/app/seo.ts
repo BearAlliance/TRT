@@ -22,7 +22,14 @@ export const BUSINESS = {
   twitterUrl: 'https://twitter.com/christianfavata',
 }
 
-export const SITE_ROUTES = ['/', '/rental', '/repair', '/fit', '/contact']
+export const SITE_ROUTES = [
+  '/',
+  '/rental',
+  '/repair',
+  '/fit',
+  '/contact',
+  '/inventory',
+]
 
 export const localBusinessJsonLd = {
   '@context': 'https://schema.org',
