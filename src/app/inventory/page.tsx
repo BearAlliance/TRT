@@ -3,14 +3,14 @@ import { Container } from '@/components/Container'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Shop Our Inventory',
+  title: 'Inventory',
   description:
     'Browse the current bikes and gear available at TRT Bicycles in Rosendale, NY.',
   alternates: {
     canonical: '/inventory',
   },
   openGraph: {
-    title: 'Shop Our Inventory | TRT Bicycles',
+    title: 'Inventory | TRT Bicycles',
     description:
       'Browse the current bikes and gear available at TRT Bicycles in Rosendale, NY.',
     url: '/inventory',
