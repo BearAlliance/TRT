@@ -133,11 +133,20 @@ export function createCmsHandlers({
     getMedia: async (request: FastifyRequest, reply: FastifyReply) => {
       const { filename } = request.params as { filename: string }
       if (!/^[0-9a-f-]{36}\.webp$/.test(filename)) return reply.code(404).send()
+      const resolvedUploadsDir = path.resolve(uploadsDir)
+      const filePath = path.resolve(resolvedUploadsDir, filename)
+      const relativePath = path.relative(resolvedUploadsDir, filePath)
+      if (
+        relativePath === '..' ||
+        relativePath.startsWith(`..${path.sep}`) ||
+        path.isAbsolute(relativePath)
+      )
+        return reply.code(404).send()
       try {
         return reply
           .type('image/webp')
           .header('Cache-Control', 'public, max-age=31536000, immutable')
-          .send(await readFile(path.join(uploadsDir, filename)))
+          .send(await readFile(filePath))
       } catch {
         return reply.code(404).send()
       }
