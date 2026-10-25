@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "types": ["node"],
+    "incremental": false,
+    "plugins": []
+  },
+  "include": ["src/cms/**/*.ts"],
+  "exclude": ["node_modules", "src/cms/**/*.test.ts"]
+}
