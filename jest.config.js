@@ -1,9 +1,9 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} **/
+/** @type {import('jest').Config} **/
 module.exports = {
   resetMocks: true,
   restoreMocks: true,
   testEnvironment: 'node',
   transform: {
-    '^.+.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.jest.json' }],
+    '^.+\\.tsx?$': '@swc/jest',
   },
 }

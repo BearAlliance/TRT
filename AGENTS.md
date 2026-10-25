@@ -12,7 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run cms:build` — type-check the CMS server with `tsconfig.cms.json`; the CMS runs from source through `tsx`, so there is no emitted output
 - `npm run lint` — ESLint (flat config, `eslint-config-next`)
 - `npm run prettier:check` / `npm run prettier:write` — Prettier (Tailwind class sorting via `prettier-plugin-tailwindcss`)
-- `npm run test:unit` — Jest (ts-jest) unit tests only
+- `npm run test:unit` — Jest unit tests only, transformed by `@swc/jest` without type-checking
 - `npm test` — full gate: lint + prettier:check + test:unit (this is what CI runs)
 - Single test: `npx jest src/app/contact/hours.test.ts` or `npx jest -t "<test name>"`
 - Husky + lint-staged run ESLint/Prettier on staged files at commit time.
