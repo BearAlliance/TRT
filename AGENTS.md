@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run cms:hash-password -- "<password>"` — generate the `CMS_PASSWORD_HASH` value for local or Render configuration
 - `npm run build` — static export build (output goes to `build/`, not `.next/` — see `distDir` in `next.config.js`)
 - `npm start` — serve the production build
+- `npm run cms:build` — type-check the CMS server with `tsconfig.cms.json`; the CMS runs from source through `tsx`, so there is no emitted output
 - `npm run lint` — ESLint (flat config, `eslint-config-next`)
 - `npm run prettier:check` / `npm run prettier:write` — Prettier (Tailwind class sorting via `prettier-plugin-tailwindcss`)
 - `npm run test:unit` — Jest (ts-jest) unit tests only
