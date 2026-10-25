@@ -2,6 +2,7 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from '@jest/globals'
+import type { FastifyInstance } from 'fastify'
 import sharp from 'sharp'
 import { createCmsApp, hashPassword } from './server'
 
@@ -32,6 +33,43 @@ function multipartBody(fields: Record<string, string>, image?: Buffer) {
     ]),
     contentType: `multipart/form-data; boundary=${boundary}`,
   }
+}
+
+async function createItemAsAdmin(app: FastifyInstance) {
+  const headers = { origin: 'http://localhost:3000' }
+  const login = await app.inject({
+    headers,
+    method: 'POST',
+    payload: {
+      password: 'correct horse battery staple',
+      username: 'inventory-admin',
+    },
+    url: '/v1/auth/login',
+  })
+  const setCookie = login.headers['set-cookie']
+  const sessionCookie = (
+    Array.isArray(setCookie) ? setCookie[0] : setCookie
+  )?.split(';')[0]
+  const image = await sharp({
+    create: { background: '#123456', channels: 3, height: 40, width: 40 },
+  })
+    .png()
+    .toBuffer()
+  const upload = multipartBody(
+    { description: 'A great bike.', title: 'Demo bike' },
+    image,
+  )
+  const created = await app.inject({
+    headers: {
+      ...headers,
+      'content-type': upload.contentType,
+      cookie: sessionCookie,
+    },
+    method: 'POST',
+    payload: upload.body,
+    url: '/v1/admin/inventory',
+  })
+  return (created.json() as { item: { id: string; imageUrl: string } }).item
 }
 
 describe('inventory CMS API', () => {
@@ -163,6 +201,48 @@ describe('inventory CMS API', () => {
     })
     expect(preflight.statusCode).toBe(204)
     expect(preflight.headers['access-control-allow-methods']).toContain('PATCH')
+    await app.close()
+  })
+
+  it.each([
+    ['an absolute', (dir: string) => dir],
+    ['a relative', (dir: string) => path.relative(process.cwd(), dir)],
+  ])(
+    'serves uploaded images at the listed imageUrl with %s data directory',
+    async (_label, toDataDir) => {
+      const app = await createCmsApp({
+        allowedOrigins: ['http://localhost:3000'],
+        dataDir: toDataDir(dataDir),
+        publicApiUrl: 'http://localhost:4000',
+        secureCookies: false,
+      })
+      await createItemAsAdmin(app)
+      const listed = await app.inject({ method: 'GET', url: '/v1/inventory' })
+      const [item] = (listed.json() as { items: { imageUrl: string }[] }).items
+
+      const media = await app.inject({
+        method: 'GET',
+        url: new URL(item.imageUrl).pathname,
+      })
+      expect(media.statusCode).toBe(200)
+      expect(media.headers['content-type']).toBe('image/webp')
+      expect(media.headers['cache-control']).toBe(
+        'public, max-age=31536000, immutable',
+      )
+      expect((await sharp(media.rawPayload).metadata()).format).toBe('webp')
+      await app.close()
+    },
+  )
+
+  it.each([
+    '00000000-0000-0000-0000-000000000000.webp',
+    'not-an-upload.webp',
+    '..%2Finventory.sqlite',
+    '..%2F..%2F..%2F..%2Fetc%2Fpasswd',
+  ])('returns 404 for media filename %s', async (filename) => {
+    const app = await createCmsApp({ dataDir, secureCookies: false })
+    const media = await app.inject({ method: 'GET', url: `/media/${filename}` })
+    expect(media.statusCode).toBe(404)
     await app.close()
   })
 })
